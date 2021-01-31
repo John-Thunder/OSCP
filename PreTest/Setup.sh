@@ -107,7 +107,7 @@ chmod +x ~/OSCP-expect.sh
 # MSFconsole setup
 service postgresql start
 sudo msfdb init
-chmod 777 /usr/share/metasploit-framework/.bundle/config`
+sudo chmod 777 /usr/share/metasploit-framework/.bundle/config
 
 
 cat <<EOF 
