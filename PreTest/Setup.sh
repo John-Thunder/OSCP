@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Update Kali
 # wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
