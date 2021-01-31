@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Update Kali
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+# wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+# wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt update && sudo apt upgrade -y && sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox
+sudo apt autoremove
 
 # feroxbuster
-wget -sLO https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip
+wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip
 unzip feroxbuster_amd64.deb.zip
-sudo apt install ./feroxbuster_amd64.deb
+sudo apt install ./feroxbuster_*_amd64.deb
 
 
 # Install pip for Python2:
@@ -25,7 +26,8 @@ pip3 install impacket
 git clone https://github.com/SecureAuthCorp/impacket.git
 cd impacket/
 pip3 install .
-cd ..
+
+cd ~/git
 
 git clone https://github.com/ciwen3/OSCP.git
 git clone https://github.com/mishmashclone/OlivierLaflamme-Cheatsheet-God.git
@@ -45,10 +47,10 @@ HISTFILESIZE=-1
 HISTSIZE=-1
 HISTCONTROL=ignoredups
 HISTIGNORE=?:??
-shopt -s histappend
-shopt -s cmdhist
-shopt -s lithist
-asciinema rec ~/asciinema/OSCP-$(date +"%d-%b-%Y-%T").$RANDOM.cast" >> /etc/zsh/zshrc
+#shopt -s histappend
+#shopt -s cmdhist
+#shopt -s lithist
+asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/zsh/zshrc
 
 
 sudo echo "
@@ -57,10 +59,10 @@ HISTFILESIZE=-1
 HISTSIZE=-1
 HISTCONTROL=ignoredups
 HISTIGNORE=?:??
-shopt -s histappend
-shopt -s cmdhist
-shopt -s lithist
-asciinema rec ~/asciinema/OSCP-$(date +"%d-%b-%Y-%T").$RANDOM.cast" >> /etc/bash.bashrc
+#shopt -s histappend
+#shopt -s cmdhist
+#shopt -s lithist
+asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/bash.bashrc
 
 
 # create scripts for retaining data
@@ -85,7 +87,7 @@ git push origin main
 # for older Github accounts use below:
 # git push origin master 
 EOF
-chmod +x OSCP-git.sh
+chmod +x ~/OSCP-git.sh
 
 
 cat <<EOF > ~/OSCP-expect.sh
@@ -99,7 +101,7 @@ expect "Password for 'https://<username>@github.com':"
 send -- "<password>\n"
 expect eof
 EOF
-chmod +x OSCP-expect.sh
+chmod +x ~/OSCP-expect.sh
 
 
 # MSFconsole setup
