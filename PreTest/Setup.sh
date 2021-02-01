@@ -13,8 +13,8 @@ sudo apt install ./feroxbuster_*_amd64.deb
 
 
 # Install pip for Python2:
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#python get-pip.py
 
 
 mkdir ~/git
