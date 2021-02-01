@@ -3,7 +3,9 @@
 # Update Kali
 # wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 # wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo apt update && sudo apt upgrade -y && sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox imagemagick gifsicle
 sudo apt autoremove
 
 # feroxbuster
