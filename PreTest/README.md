@@ -89,6 +89,14 @@ https://github.com/ciwen3/OSCP/blob/master/Metasploit/MSFconole.md
 1. Antivirus turned off
 2. firewall turned off
 
+### 13. Foxy Proxy & Burp Suite
+https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+- create new
+- name: burp
+- IP: 127.0.0.1
+- Port: 8080
+browse to: http://burpsuite to install the certificate
+
 ## Software:
 1. Immunity Debugger - https://www.immunityinc.com/products/debugger/index.html
 2. moana.py - https://github.com/corelan/mona
