@@ -84,11 +84,6 @@ asciinema rec ~/asciinema/OSCP-$(date +"%d-%b-%Y-%T").cast
 ### 12. Setup and test MSFConsole (just in case)
 https://github.com/ciwen3/OSCP/blob/master/Metasploit/MSFconole.md
 
-# Setup Windows 10 VM
-## Settings:
-1. Antivirus turned off
-2. firewall turned off
-
 ### 13. Foxy Proxy & Burp Suite
 https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 - create new
@@ -96,6 +91,13 @@ https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 - IP: 127.0.0.1
 - Port: 8080
 browse to: http://burpsuite to install the certificate
+
+
+
+# Setup Windows 10 VM
+## Settings:
+1. Antivirus turned off
+2. firewall turned off
 
 ## Software:
 1. Immunity Debugger - https://www.immunityinc.com/products/debugger/index.html
