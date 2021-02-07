@@ -39,6 +39,7 @@ git clone https://github.com/PowerShellMafia/PowerSploit.git
 git clone https://github.com/SecWiki/windows-kernel-exploits.git
 git clone https://github.com/SecWiki/linux-kernel-exploits.git
 git clone https://github.com/tennc/webshell.git
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
 
 
 cd
