@@ -50,7 +50,8 @@ Search through the body of valid responses (html, javascript, etc...) for additi
 
 ## Grab it all 
 ```
-feroxbuster -u http://10.129.35.132/login.php --extract-links -x js php ini inf jsp htm html json pdf txt xlsx docx svg axd
+feroxbuster -e -f -k -x js php ini inf jsp htm html json pdf txt xlsx docx svg axd -w dirsearch.txt -u http://10.129.35.132/login.php 
+
 ```
 
 
