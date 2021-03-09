@@ -6,7 +6,7 @@
 ```
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo apt update && sudo apt upgrade -y && sudo apt install -y curl wget ssh openvpn git flameshot expect python3 python3-pip asciinema cherrytree virtualbox
+sudo apt update && sudo apt upgrade -y && sudo apt install -y curl wget ssh openvpn git flameshot expect python3 python3-pip asciinema cherrytree virtualbox feroxbuster sublist3r 
 ```
 
 ### 3. Install pip for Python2: 
