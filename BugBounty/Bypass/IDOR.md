@@ -91,6 +91,7 @@ Firefox containers may make this easier.
 - perform same action as earlier
 - now repeat the action with the cookies swapped (try from both accounts)
 - if it works try changing the cookies to see if it still works 
+- reuse old cookies and tokens (check for time reference)
 
 
 #### Test every endpoint
@@ -98,6 +99,7 @@ do the tricks above for every end point possible.
 - look for CRUD (private messages, profile, public posts, private posts, replies, change account info, forum, like, video sharing, reposting, etc)
 - figure out how it is access legitimately 
 - try to access it illegitimately
+- look for restricted access end points
 - look for lesser used or know and new features (forum games, chatrooms, bot functionality, invites, etc)
 
 
@@ -118,7 +120,9 @@ stuff like cookies, IDs or other parameters
 use the API to bypass protections (restrictions maybe applied on the front end or backend and might not be on the API. this could allow you to talk to the database directly. 
 
 
-
+#### Modify Parameters
+1. modify requests with additional parameters like "&admin=True"
+2. modify referrer headers
 
 
 
