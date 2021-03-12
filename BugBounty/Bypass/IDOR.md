@@ -64,3 +64,65 @@ Always try to find the hidden parameters for this endpoints using Arjun and Para
 - /username
 - /profile
 And any payment endpoint
+
+
+
+## Where to find IDORs
+https://www.youtube.com/watch?v=hmlkUYJ9MFw
+- IDs or Values that could be IDs
+- APIs
+- Complex permission hierarchies
+- CRUD Functionality (Create Read Update Delete)
+
+
+#### Create 2 Accounts:
+- test all of Account As resources with Account B.  
+- remove the cookie, does the resourse still work with out the cookie (unauthenticated IDOR)
+- if one works try it with admin account (which would be a permissions idor)
+
+
+#### Cookies: 
+Firefox containers may make this easier. 
+- login to account 1
+- perform an action
+- copy the cookies
+- logout
+- login to account 2
+- perform same action as earlier
+- now repeat the action with the cookies swapped (try from both accounts)
+- if it works try changing the cookies to see if it still works 
+
+
+#### Test every endpoint
+do the tricks above for every end point possible.
+- look for CRUD (private messages, profile, public posts, private posts, replies, change account info, forum, like, video sharing, reposting, etc)
+- figure out how it is access legitimately 
+- try to access it illegitimately
+- look for lesser used or know and new features (forum games, chatrooms, bot functionality, invites, etc)
+
+
+#### look for weirdness
+for example: 
+1. if all the pages are doing GET or POST requests and you see an odd PUT request
+2. URLs with lots of parameters or really long parameters
+3. if it looks weird test it
+
+
+#### Decode info in Cyber Chef
+stuff like cookies, IDs or other parameters
+1. https://gchq.github.io/CyberChef/
+2. http://icyberchef.com/
+
+
+#### Bypass Protections
+use the API to bypass protections (restrictions maybe applied on the front end or backend and might not be on the API. this could allow you to talk to the database directly. 
+
+
+
+
+
+
+
+
+
+
