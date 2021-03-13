@@ -14,10 +14,12 @@
   - OPTIONS: The OPTIONS method is used to describe the communication options for the target resource.
   - TRACE: The TRACE method performs a message loop-back test along the path to the target resource.
   - PATCH: The PATCH method is used to apply partial modifications to a resource. 
+  - QWE: made up, but fake options can sometimes return a lot of information
 
 
-
-
+## Send malformed JSON Requests
+for example add an extra quote:
+- {"bugcrowd":"LevelUp0x3""}
 
 
 ## Input Validation Bugs
@@ -32,17 +34,19 @@
 ## Things you can Fuzz for
 ### Input Validation Fuzzing:
 1. Remote Code Execution
+  - SSTI
+  - File Upload? ({"filename":"test.png", "fileContent":"data:image/png;base64,...") can lead to XXE or Stored XSS.
 2. Cross Site Scripting
-3. Local/Remote File Inclusion
-4. SQL/noSQL Injection
-5. Request Splitting - Making additional requests to 3rd party APIs through the target APi or vise versa (if allowed).
-6. Deserialization
-7. XXE and other templated languages
-8. Encoding errors with junk characters, Control Character, Emoji, etc
-9. File Upload Vulnerability
-10. SSRF - APIs that can resolve URLs can be tricked into making requests in the context of the server itself. Can lead to enumeration of private internal network, or gaining access to server metadata in a cloud environment. 
-11. Unhandled Input - from 3rd party, can result in unexpected errors in the target application
-12. 3rd party API - often have a trusted relationship with the server in someway that can be exploited. 
+4. Local/Remote File Inclusion
+5. SQL/noSQL Injection
+6. Request Splitting - Making additional requests to 3rd party APIs through the target APi or vise versa (if allowed).
+7. Deserialization
+8. XXE and other templated languages
+9. Encoding errors with junk characters, Control Character, Emoji, etc
+10. File Upload Vulnerability
+11. SSRF - APIs that can resolve URLs can be tricked into making requests in the context of the server itself. Can lead to enumeration of private internal network, or gaining access to server metadata in a cloud environment. 
+12. Unhandled Input - from 3rd party, can result in unexpected errors in the target application
+13. 3rd party API - often have a trusted relationship with the server in someway that can be exploited. 
 
 
 ### Tools you can use
@@ -61,6 +65,7 @@ test by making a lot of requests very fast an see if you get an error message
 4. bot
 5. deactivated account
 6. bogus credentials
+7. add & (or other "illegal" characters) at the end of requests and see what happens 
 
 
 
