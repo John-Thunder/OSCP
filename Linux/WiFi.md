@@ -26,7 +26,7 @@ sudo airodump-ng -w New -c 2 wlp1s0mon
 ```
 sudo airodump-ng -c 4 --bssid 00:00:00:00:00:00 -w New  wlp1s0mon
 ```
-**wait for "WPA handshake" to show up in the top right corner**
+## *wait for "WPA handshake" to show up in the top right corner*
 
 # Deauthenticating Device from the network
 ```
