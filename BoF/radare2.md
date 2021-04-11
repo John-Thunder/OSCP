@@ -86,6 +86,10 @@ $ r2 -p test
 ```
 
 
+
+
+https://tthtlc.wordpress.com/2020/06/02/uncovering-all-the-commands-of-radare2/
+
 https://r2wiki.readthedocs.io/en/latest/options/a/aa/
 
 ### Essential Commands:
