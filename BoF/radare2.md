@@ -1,4 +1,5 @@
-# radare2 -h                                                                                                               1 ⨯
+# radare2 -h           
+
 ```
 Usage: r2 [-ACdfLMnNqStuvwzX] [-P patch] [-p prj] [-a arch] [-b bits] [-i file]
           [-s addr] [-B baddr] [-m maddr] [-c cmd] [-e k=v] file|pid|-|--|=
@@ -85,7 +86,30 @@ $ r2 -p test
 ```
 
 
+https://r2wiki.readthedocs.io/en/latest/options/a/aa/
 
-
+### Essential Commands:
+Use '?' to see help with any command. E.g. 'a?' will show all analysis command referenc info. 
+```
+aaa: analyse all the things
+afl: list functions found
+s: 
+is: lisy symbols
+pd: 
+pdf: disassemble function
+px[wq]: 
+ps: 
+db: 'db <addr/sym>' to set a breakpoint
+dbt: show backtrace
+dc: 'dc' to continue execution until you hit a breakpoint or program completion. 
+dcr: 'dcr' continues until a 'ret' instruction
+ds: 'ds' to step instructions and info calls
+dso: 'dso' to step instructions and over calls
+dr=: show registers in columns
+dr[r]: periscoped register values
+ood: 
+dm: 
+v: enter visual panels mode
+```
 
 
