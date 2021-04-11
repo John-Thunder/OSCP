@@ -48,3 +48,44 @@ Usage: r2 [-ACdfLMnNqStuvwzX] [-P patch] [-p prj] [-a arch] [-b bits] [-i file]
  -X           same as -e bin.usextr=false (useful for dyldcache)
  -z, -zz      do not load strings or load them even in raw
 ```
+
+
+# Common usage patterns:
+### Open a file in write mode without parsing the file format headers.
+```
+$ r2 -nw file
+```
+### Quickly get into an r2 shell without opening any file.
+```
+$ r2 -
+```
+### Specify which sub-binary you want to select when opening a fatbin file:
+```
+$ r2 -a ppc -b 32 ls.fat
+```
+### Run a script before showing interactive command-line prompt:
+```
+$ r2 -i patch.r2 target.bin
+```
+### Execute a command and quit without entering the interactive mode:
+```
+$ r2 -qc ij hi.bin > imports.json
+```
+### Set the configuration variable:
+```
+$ r2 -e scr.color=0 blah.bin
+```
+### Debug a program:
+```
+$ r2 -d ls
+```
+### Use an existing project file:
+```
+$ r2 -p test
+```
+
+
+
+
+
+
