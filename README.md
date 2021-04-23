@@ -64,7 +64,8 @@ You will receive no points for a specific target for the following:
 1. Using a restricted tool
 2. Using Metasploit Auxiliary, Exploit, or Post modules on multiple machines
 3. Using the Meterpreter payload on multiple machines
-4. Failure to provide the local.txt and proof.txt file contents in both the control panel and in a screenshot
+4. Using LinPeas ( https://twitter.com/_superhero1/status/1385206684109447168 & https://www.reddit.com/r/oscp/comments/mw4idk/heads_up_dont_use_linpeas_on_the_exam/ )
+5. Failure to provide the local.txt and proof.txt file contents in both the control panel and in a screenshot
 
 ## Metasploit Restrictions
 The usage of Metasploit and the Meterpreter payload are restricted during the exam. You may only use Metasploit modules ( Auxiliary, Exploit, and Post ) or the Meterpreter payload against one single target machine of your choice. Once you have selected your one target machine, you cannot use Metasploit modules ( Auxiliary, Exploit, or Post ) or the Meterpreter payload against any other machines.
