@@ -70,11 +70,12 @@ You will receive no points for a specific target for the following:
 Exam Restrictions from https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide
 You cannot use any of the following on the exam:
 
-Spoofing (IP, ARP, DNS, NBNS, etc)
-Commercial tools or services (Metasploit Pro, Burp Pro, etc.)
-Automatic exploitation tools (e.g. db_autopwn, browser_autopwn, SQLmap, SQLninja etc.)
-Mass vulnerability scanners (e.g. Nessus, NeXpose, OpenVAS, Canvas, Core Impact, SAINT, etc.)
-Features in other tools that utilize either forbidden or restricted exam limitations
+- Spoofing (IP, ARP, DNS, NBNS, etc)
+- Commercial tools or services (Metasploit Pro, Burp Pro, etc.)
+- Automatic exploitation tools (e.g. db_autopwn, browser_autopwn, SQLmap, SQLninja etc.)
+- Mass vulnerability scanners (e.g. Nessus, NeXpose, OpenVAS, Canvas, Core Impact, SAINT, etc.)
+- Features in other tools that utilize either forbidden or restricted exam limitations
+
 Any tools that perform similar functions as those above are also prohibited. You are ultimately responsible for knowing what features or external utilities any chosen tool is using. The primary objective of the OSCP exam is to evaluate your skills in identifying and exploiting vulnerabilities, not in automating the process.
 
 You may however, use tools such as Nmap (and its scripting engine), Nikto, Burp Free, DirBuster etc. against any of your target systems.
