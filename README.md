@@ -64,8 +64,20 @@ You will receive no points for a specific target for the following:
 1. Using a restricted tool
 2. Using Metasploit Auxiliary, Exploit, or Post modules on multiple machines
 3. Using the Meterpreter payload on multiple machines
-4. Using LinPeas ( https://twitter.com/_superhero1/status/1385206684109447168 & https://www.reddit.com/r/oscp/comments/mw4idk/heads_up_dont_use_linpeas_on_the_exam/ )
+4. Using LinPeas ( https://twitter.com/_superhero1/status/1385206684109447168 & https://www.reddit.com/r/oscp/comments/mw4idk/heads_up_dont_use_linpeas_on_the_exam/ UPDATE: https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/ )
 5. Failure to provide the local.txt and proof.txt file contents in both the control panel and in a screenshot
+
+Exam Restrictions from https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide
+You cannot use any of the following on the exam:
+
+Spoofing (IP, ARP, DNS, NBNS, etc)
+Commercial tools or services (Metasploit Pro, Burp Pro, etc.)
+Automatic exploitation tools (e.g. db_autopwn, browser_autopwn, SQLmap, SQLninja etc.)
+Mass vulnerability scanners (e.g. Nessus, NeXpose, OpenVAS, Canvas, Core Impact, SAINT, etc.)
+Features in other tools that utilize either forbidden or restricted exam limitations
+Any tools that perform similar functions as those above are also prohibited. You are ultimately responsible for knowing what features or external utilities any chosen tool is using. The primary objective of the OSCP exam is to evaluate your skills in identifying and exploiting vulnerabilities, not in automating the process.
+
+You may however, use tools such as Nmap (and its scripting engine), Nikto, Burp Free, DirBuster etc. against any of your target systems.
 
 ## Metasploit Restrictions
 The usage of Metasploit and the Meterpreter payload are restricted during the exam. You may only use Metasploit modules ( Auxiliary, Exploit, and Post ) or the Meterpreter payload against one single target machine of your choice. Once you have selected your one target machine, you cannot use Metasploit modules ( Auxiliary, Exploit, or Post ) or the Meterpreter payload against any other machines.
