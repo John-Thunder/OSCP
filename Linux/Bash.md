@@ -109,3 +109,7 @@ echo
 
 exit
 ```
+
+
+# read
+https://www.computerhope.com/unix/bash/read.htm
