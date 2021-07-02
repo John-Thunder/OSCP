@@ -29,7 +29,7 @@
 
 Directional Trust: the trust direction flows from trusting domain to to trusted domain
 
-transitive Trust: the trust relationship is extended beyond a two-domain trust to include other trusted domains 
+Transitive Trust: the trust relationship is extended beyond a two-domain trust to include other trusted domains 
 
 ## Objects:
 1. User: enables network resource access for a user
