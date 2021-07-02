@@ -47,6 +47,7 @@ transitive Trust: the trust relationship is extended beyond a two-domain trust t
 ## Data Store:
 ```
 %SystemRoot%\NTDS\Ntds.dit
+C:\Windows\NTDS\Ntds.dit
 ```
 always check for this file and grab it. only accessible through the domian controller and contains everything in Active Directory. 
 
