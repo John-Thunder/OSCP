@@ -42,6 +42,9 @@ git clone https://github.com/tennc/webshell.git
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
 git clone https://github.com/fox-it/mitm6.git
 
+cd mitm6/
+pip3 install .
+sudo python3 ./setup.py
 
 cd
 mkdir ~/asciinema
