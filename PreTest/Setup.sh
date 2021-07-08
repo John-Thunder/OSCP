@@ -28,6 +28,8 @@ pip3 install impacket
 git clone https://github.com/SecureAuthCorp/impacket.git
 cd impacket/
 pip3 install .
+sudo python3 ./setup.py install
+
 
 cd /opt
 
@@ -44,7 +46,7 @@ git clone https://github.com/fox-it/mitm6.git
 
 cd mitm6/
 pip3 install .
-sudo python3 ./setup.py
+sudo python3 ./setup.py install
 
 cd
 mkdir ~/asciinema
