@@ -17,12 +17,15 @@ cd /opt; git clone https://github.com/fox-it/mitm6.git; cd mitm6
 2. get Domain Controller IP 
 Domain controllers will show port 389 running the Microsoft Windows AD LDAP service:
 ```
-nmap -p389 -sV <IP-range>
+nmap -p389 -sV <IP-range>           # faster but may not return results if the server is blocking pings
+nmap -p389 -sV -Pn <IP-range>       # slower but more accurate
 ```
 Expected Output:
 ```
-PORT    STATE SERVICE VERSION 
-389/tcp open  ldap    Microsoft Windows AD LDAP (Domain:TESTDOMAIN, Site: TEST) 
+PORT    STATE SERVICE VERSION
+389/tcp open  ldap    Microsoft Windows Active Directory LDAP (Domain: MARVEL.local0., Site: Default-First-Site-Name)
+MAC Address: CC:2F:71:3A:CE:3D (Intel Corporate)
+Service Info: Host: HYDRA-DC; OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
 OR:
 ```
