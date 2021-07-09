@@ -112,7 +112,7 @@ everything else stays on
 ### NMAP
 check for open SMB port and check for SMB signing
 ```
-sudo --script=smb2-security-mode.nse -p445 192.168.1.0/24
+sudo nmap --script=smb2-security-mode.nse -p445 192.168.1.0/24
 ```
 look for smb2 enabled but not required (default for desktops)
 
