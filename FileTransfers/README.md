@@ -87,10 +87,16 @@ so if you run this from the home folder, then you'd open a browser and go to the
 ``` 
 python -m SimpleHTTPServer 8080
 ```
+
+browse to: http://<Host-IP>:8000
+
 ## Python 3
 ```
 python3 -m http.server 8000
 ```
+
+browse to: http://<Host-IP>:8000
+
 ## Check:
 browse to localhost:8000
 ## From Victim Machine:
