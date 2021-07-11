@@ -102,7 +102,7 @@ browse to localhost:8000
 ## From Victim Machine:
 browse to \<Attacker-IP\>:8000
 
-# 'my_server.py':
+# 'FTP_server.py':
 ```
 #!/usr/bin/env python
 from pyftpdlib import servers
@@ -124,7 +124,9 @@ php -S 0.0.0.0:80					r
 
 # SMB share:
 ## setup SMB sharefrom Impacket:
-/opt/impacket/examples:
+https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py
+
+from /opt/impacket/examples:
 ```
 python smbserver.py ROPNOP /root/shells
 ```
