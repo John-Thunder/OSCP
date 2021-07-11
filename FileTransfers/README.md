@@ -112,16 +112,6 @@ server = servers.FTPServer(address, FTPHandler)
 server.serve_forever()
 ```
 
-# Run a ruby webrick basic http server
-```
-ruby -rwebrick -e "WEBrick::HTTPServer.new (:Port => 80, :DocumentRoot => Dir.pwd).start"
-```
-
-# Run a basic PHP http serve
-```
-php -S 0.0.0.0:80					r
-```
-
 # SMB share:
 ## setup SMB sharefrom Impacket:
 https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py
@@ -166,6 +156,15 @@ ftp> get malicious.exe
 ftp> bye
 ```
 
+# Run a ruby webrick basic http server
+```
+ruby -rwebrick -e "WEBrick::HTTPServer.new (:Port => 80, :DocumentRoot => Dir.pwd).start"
+```
+
+# Run a basic PHP http serve
+```
+php -S 0.0.0.0:80					r
+```
 
 # NetCat File Transfer:
 nc is basically a built-in tool from any UNIX-like systems (even embedded systems), so it's perfect for "quick and temporary way to transfer files".
