@@ -43,6 +43,58 @@ Transitive Trust: the trust relationship is extended beyond a two-domain trust t
 
 **********************
 
+## Active Directory Domain Controller Setup:
+1. Install server using Windows server 2019 evaluation iso
+2. Rename server (reboot)
+4. Install Active Directory:
+  - Manage > add Roles and Features > Next > Next > Next > Active Directory Domain Services > Next ... Install
+6. Promote this server to a domain controller
+  - After Installation has finished, look for Yellow Flag (Post-deployment Configuration)
+5. Add a New Forest > Root Domain Name: MARVEL.local (Strat0m.com or whatever domain you want) > Create Password > Next > wait for Domain name to show up then choose Next > Next (can change NTDS location if wanted) > Next > Install
+  - will automatically reboot server
+
+## Active Directory Add File Share:
+Server Manager > File and Storage Service (left pane)
+Shares > Tasks (drop down window) > New Share... > SMBshare Quick > Next > Share Name: HackMe > Next > Next > Create (opens up ports 139 and 445)
+
+## Create Service Prinicple Name (SPN): kerberoasting? 
+CMD (run as administrator) 
+```
+setspn -a HYDRA-DC/SQLService.MARVEL.local:60111 Marvel\SQLService
+setspn -T MARVEL.local -Q */*
+```
+## Active Directory Add Group Policy: to turn of Defender Anti-Virus
+1. Group Policy Management 
+2. Forest: Marvel.local > Domains > Marvel.local
+3. Right click Marvel.local and select "Create a GPO in this domian, and link it here..."
+  - Name the GPO: Disable Windows Defender
+4. Edit the GPO
+  - in Left Pane: Computer Configuration > Policies > Administrative Templates: Policy deinitions (ADM) > Windows Components > Windows Defender Antivirus
+  - in right pane: Turn off Windows Defender Antivirus > Enabled > Apply
+
+## Active Directory Add Users:
+1. Server Manager > Tools > Active Directory Users and Computers 
+2. Move all Built-in Security Groups to their own area
+  - right click Marvel.local > New > Organizational Unit > name it: Groups
+  - Marvel.local > Users 
+  - select all except (Administrator and Guest) and move them to the newly greated Groups folder (note down arrow means account has been disabled)
+3. right click Marvel.local > New > User (create various users with different levels of access for testing purposes, add a description that includes a password to one account)
+
+## Windows 10 connected to Active Directory Domain Controller:
+1. Install Windows 10 using evaluation iso 
+2. Add User with "Domain Join Instead" (bottom left corner) 
+  - This user won't matter once we are joined to the domain
+4. Rename computer (reboot)
+5. Add File Share (for exploitation purposes)
+6. Join to Domain
+  - Change DNS settings to point to Domain Controller IP 
+  - Start menu > Type: Domain > Access work or school > Connect > Join this Device to a Local Active Directory Domain 
+  - Domain Name: Marvel.local 
+  - Use Administrator username and password
+  - Skip add an account option
+  - Restart Now
+
+**********************
 # Attacking:
 ### Data Store:
 ```
