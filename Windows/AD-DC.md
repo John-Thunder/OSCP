@@ -94,6 +94,11 @@ setspn -T MARVEL.local -Q */*
   - Skip add an account option
   - Restart Now
 
+## Set user as local admin on Winodws 10 PC
+1. Login as Administrator 
+2. Right click start menu > Computer Management > Local Users and Groups > Groups > Administrators
+3. check user name that you want to make admin > OK > Apply
+
 **********************
 # Attacking:
 ### Data Store:
