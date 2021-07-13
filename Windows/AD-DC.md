@@ -229,7 +229,7 @@ sudo nmap -sU -sS --script smb-os-discovery.nse -p U:137,T:139 127.0.0.1
 
 4. run mitm6
 ```
-sudo python mitm6.py -d <domain>.local
+sudo python mitm6.py -i eth0 -d <domain>.local
 ```
 
 5. run ntmlrelayx.py at the same time
