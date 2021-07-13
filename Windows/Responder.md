@@ -303,7 +303,7 @@ PPARKER::MARVEL:abd8996fdc62d49e:7d7620fa7e88954ec8421d26f071f9ee:01010000000000
 4. Require strong passwords (phrases) more than 14 characters
 
 
-## SMB attacks: How do I get Victim to try connecting to attack machine SMB??
+# SMB attacks: How do I get Victim to try connecting to attack machine SMB??
 edit: /usr/share/responder/Responder.conf
 ```
 SMB = Off
