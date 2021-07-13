@@ -324,6 +324,7 @@ look for smb2 enabled but not required (default for desktops)
 ```
 ntmlrelayx.py -tf targets.txt -smb2support -i
 ```
+Note: targets.txt contains the IP addresses of who we want to attack. without this it won't respond to your attempts. 
 
 ```
 -i interact
