@@ -99,6 +99,12 @@ setspn -T MARVEL.local -Q */*
 2. Right click start menu > Computer Management > Local Users and Groups > Groups > Administrators
 3. check user name that you want to make admin > OK > Apply
 
+## Windows 10 allow Network discovery
+1. Open File Explorer
+2. Click Network in the left Pane
+3. Clcik "OK" to allowing Network discovery
+4. At the top of Explorer: "Turn on network discovery and file sharing"
+
 **********************
 # Attacking:
 ### Data Store:
