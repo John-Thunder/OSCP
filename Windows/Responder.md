@@ -360,6 +360,11 @@ cd .john
 cat john.pot
 ```
 
+```
+john hash.txt 
+john --show hash.txt  
+```
+
 
 #### connecting: requires having cracked a hash
 1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
