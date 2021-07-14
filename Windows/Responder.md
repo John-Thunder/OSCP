@@ -365,6 +365,40 @@ nc 127.0.0.1 11000
 ```
 hint: use 'help' for a list of SMB shell commands
 
+```
+$ nc 127.0.0.1 11000                                                                                                 130 ⨯
+Type help for list of commands
+# help
+
+ open {host,port=445} - opens a SMB connection against the target host/port
+ login {domain/username,passwd} - logs into the current SMB connection, no parameters for NULL connection. If no password specified, it'll be prompted
+ kerberos_login {domain/username,passwd} - logs into the current SMB connection using Kerberos. If no password specified, it'll be prompted. Use the DNS resolvable domain name
+ login_hash {domain/username,lmhash:nthash} - logs into the current SMB connection using the password hashes
+ logoff - logs off
+ shares - list available shares
+ use {sharename} - connect to an specific share
+ cd {path} - changes the current directory to {path}
+ lcd {path} - changes the current local directory to {path}
+ pwd - shows current remote directory
+ password - changes the user password, the new password will be prompted for input
+ ls {wildcard} - lists all the files in the current directory
+ rm {file} - removes the selected file
+ mkdir {dirname} - creates the directory under the current path
+ rmdir {dirname} - removes the directory under the current path
+ put {filename} - uploads the filename into the current path
+ get {filename} - downloads the filename from the current path
+ mget {mask} - downloads all files from the current directory matching the provided mask
+ cat {filename} - reads the filename from the current path
+ mount {target,path} - creates a mount point from {path} to {target} (admin required)
+ umount {path} - removes the mount point at {path} without deleting the directory (admin required)
+ list_snapshots {path} - lists the vss snapshots for the specified path
+ info - returns NetrServerInfo main results
+ who - returns the sessions currently connected at the target host (admin required)
+ close - closes the current SMB Session
+ exit - terminates the server process (and this session)
+
+# 
+```
 
 ### Hashes:
 ```
