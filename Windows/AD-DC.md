@@ -80,6 +80,13 @@ setspn -T MARVEL.local -Q */*
   - select all except (Administrator and Guest) and move them to the newly greated Groups folder (note down arrow means account has been disabled)
 3. right click Marvel.local > New > User (create various users with different levels of access for testing purposes, add a description that includes a password to one account)
 
+## Setting up LDAPS:
+1. Server Manager > Manage > add roles and features
+2. Next > Next > Next > Active Directory Certificate Services > Next > Next > Next Check Certifcation Authority (Role Services) > Restart the destination server automatically > Yes > Install
+3. Yellow Flag at top (Refresh Dashboard if needed) >  Configure Active Directory Certificate Services
+4. Next > Check "Certification Authority"  > Next > Next > Next ... Valid Period set to: 99 years > Next > Next > Configure
+
+
 ## Windows 10 connected to Active Directory Domain Controller:
 1. Install Windows 10 using evaluation iso 
 2. Add User with "Domain Join Instead" (bottom left corner) 
