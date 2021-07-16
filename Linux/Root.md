@@ -147,6 +147,12 @@ Check history
 history
 ```
 Change the name of the file you are creating to be a program they use often, especially if they use sudo with it. change the script to use the shell of your choice. 
+
+Find the most common program used with sudo 
+```
+history | grep sudo | awk '{print $2, $3}' | sort | uniq -c | awk '{print $3}' | awk '(NR>=0 && NR<=11){print} (NR==1){exit}'
+```
+assuming that program is grep
 ```
 nano grep 
 ```
