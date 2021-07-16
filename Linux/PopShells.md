@@ -31,9 +31,9 @@ find / -perm /6001
 1. try ls, cd, pwd, echo commands [if these commands are restricted, 
    an error will show up with the type of restricted shell we are in (most of the time, this is rbash)]
 2. press tab twice to see what commands are available.
-  a. if "ls" is avaiable list binaries in /bin, /usr/bin, /usr/local/bin
-  b. echo /usr/bin/*  [use globbing to list directory contents]
-  c. important to check for operators and escape characters such as the following:
+  - if "ls" is avaiable list binaries in /bin, /usr/bin, /usr/local/bin
+  - echo /usr/bin/*  [use globbing to list directory contents]
+  - important to check for operators and escape characters such as the following:
   ```
      > >> < | & ; : ' " `
   ```
