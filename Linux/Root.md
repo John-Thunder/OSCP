@@ -150,7 +150,7 @@ Change the name of the file you are creating to be a program they use often, esp
 
 Find the most common program used with sudo 
 ```
-history | grep sudo | awk '{print $2, $3}' | sort | uniq -c | awk '{print $3}' | awk '(NR>=0 && NR<=11){print} (NR==1){exit}'
+history | grep sudo | awk '{print $2, $3}' | sort | uniq -c | sort -nr | awk '{print $3}' | awk '(NR>=0 && NR<=11){print} (NR==1){exit}'
 ```
 assuming that program is apt
 ```
