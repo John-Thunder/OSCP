@@ -1,9 +1,9 @@
 # IIS Splash Page Found
 "These splash pages means there is usually an endpoint that is intended for use and it does not automatically redirect the user there. For example /login. So when you run an automated scanner against it, it won't find that endpoint and just audits the splash screen."
 
-Fuzz scan identifying preauth SQLi, XSS and open redirects
+Fuzz scan identifying preauth SQLi, XSS and open redirects. create a file with ip.txt that includes the IP address of all the servers you want to scan. alternatively make a url.txt and use that. 
 ```
-ffuf -u $url/FUZZ -w wordlist.txt -ac
+for ip in $(cat ip.txt); do ffuf -u http://$ip/FUZZ -w wordlist.txt -ac; done
 ```
 
 ### Wordlists: 
