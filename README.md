@@ -8,6 +8,7 @@ https://academy.tcm-sec.com/
 
 # Helpful Cheatsheets:
 1. https://cheatsheet.haax.fr/windows-systems/network-and-domain-recon/domain_recon/
+2. https://book.hacktricks.xyz/
 
 ## Study:
 1. Buffer Overflow 
@@ -92,6 +93,7 @@ searchsploit afd windows local
 
 ## Wordlists / Dictionaries:
 1. SecLists — https://github.com/danielmiessler/SecLists
+2. IIS — https://gist.github.com/nullenc0de/96fb9e934fc16415fbda2f83f08b28e7
 
 ## Payload Generators:
 1. Reverse Shell Generator — https://github.com/cwinfosec/revshellgen
