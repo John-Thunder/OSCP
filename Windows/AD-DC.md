@@ -1,4 +1,6 @@
 # Active Directory:
+alternative resource: 
+1. https://evotec.xyz/the-only-powershell-command-you-will-ever-need-to-find-out-who-did-what-in-active-directory/
 ## Domain Controller
 1. hosts a copy of AD Directory Services directory store
 2. provide authentication and authorization
