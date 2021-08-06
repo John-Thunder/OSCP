@@ -54,6 +54,10 @@ sudo python3 ./setup.py install
 cd ~/Documents
 wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
 
+cd /usr/share/wordlists
+wget https://gist.githubusercontent.com/nullenc0de/96fb9e934fc16415fbda2f83f08b28e7/raw/146f367110973250785ced348455dc5173842ee4/content_discovery_nullenc0de.txt
+git clone https://github.com/danielmiessler/SecLists.git
+
 cd
 mkdir ~/asciinema
 sudo echo "
