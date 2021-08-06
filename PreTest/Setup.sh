@@ -7,7 +7,7 @@ sudo apt update
 sudo apt full-upgrade -y 
 sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox imagemagick gifsicle inkscape libsqlite3-dev libxslt-dev libxml2-dev zlib1g-dev gcc
 sudo apt autoremove
-PATH=$PATH:/opt
+export PATH=$PATH:/opt
 
 # feroxbuster
 wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip
