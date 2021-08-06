@@ -13,7 +13,8 @@ export PATH=$PATH:/opt
 wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip
 unzip feroxbuster_amd64.deb.zip
 sudo apt install ./feroxbuster_*_amd64.deb
-
+rm ./feroxbuster_*_amd64.deb
+rm ./feroxbuster_amd64.deb.zip
 
 # Install pip for Python2:
 #curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -21,9 +22,7 @@ sudo apt install ./feroxbuster_*_amd64.deb
 
 
 cd /opt
-
 # install repos
-
 pip3 install impacket
 git clone https://github.com/SecureAuthCorp/impacket.git
 cd impacket/
@@ -87,7 +86,6 @@ asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/ba
 
 
 # create scripts for retaining data
-
 cat <<EOF > ~/flameshot.sh
 #!/bin/bash
 while true; do flameshot full -p ~/Pictures/ ; sleep 60 ; done
