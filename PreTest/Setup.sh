@@ -49,6 +49,10 @@ cd mitm6/
 pip3 install .
 sudo python3 ./setup.py install
 
+cd 
+cd Documents
+wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
+
 cd
 mkdir ~/asciinema
 sudo echo "
