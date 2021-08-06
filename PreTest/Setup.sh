@@ -32,19 +32,21 @@ sudo python3 ./setup.py install
 
 
 cd /opt
-
-git clone https://github.com/ciwen3/OSCP.git
-git clone https://github.com/NetSPI/PowerUpSQL.git
+# exploits:
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
-git clone https://github.com/LOLBAS-Project/LOLBAS.git
-git clone https://github.com/mishmashclone/OlivierLaflamme-Cheatsheet-God.git
 git clone https://github.com/PowerShellMafia/PowerSploit.git
 git clone https://github.com/SecWiki/windows-kernel-exploits.git
 git clone https://github.com/SecWiki/linux-kernel-exploits.git
 git clone https://github.com/tennc/webshell.git
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
-git clone https://github.com/rsmudge/ZeroLogon-BOF
+git clone https://github.com/rsmudge/ZeroLogon-BOF.git
+# my repo
+git clone https://github.com/ciwen3/OSCP.git
+# other
+git clone https://github.com/LOLBAS-Project/LOLBAS.git
+git clone https://github.com/mishmashclone/OlivierLaflamme-Cheatsheet-God.git
 git clone https://github.com/vjeantet/hugo-theme-docdock.git
+git clone https://github.com/NetSPI/PowerUpSQL.git
 git clone https://github.com/fox-it/mitm6.git
 
 cd mitm6/
