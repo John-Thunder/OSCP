@@ -14,8 +14,8 @@ https://academy.tcm-sec.com/
 1. Buffer Overflow 
 2. Linux Commands and Privilege Escalation
 3. Windows Commands and Privilege Escalation
-4. Metasploit Emergency Use (in case I am running out of time and need some more points)
-5. ZeroLogon Exploit (just in case)
+4. Metasploit Emergency Use 
+5. ZeroLogon Exploit 
 
 ## Tools I plan to use:
 1. GitHub Repo (this one) — https://github.com/ciwen3/OSCP.git
