@@ -5,7 +5,7 @@
 # wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt update 
 sudo apt full-upgrade -y 
-sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox imagemagick gifsicle inkscape libsqlite3-dev libxslt-dev libxml2-dev zlib1g-dev gcc
+sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox imagemagick gifsicle inkscape libsqlite3-dev libxslt-dev libxml2-dev zlib1g-dev gcc exploitdb
 sudo apt autoremove
 export PATH=$PATH:/opt
 
