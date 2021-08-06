@@ -34,6 +34,7 @@ sudo python3 ./setup.py install
 cd /opt
 
 git clone https://github.com/ciwen3/OSCP.git
+git clone https://github.com/NetSPI/PowerUpSQL.git
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 git clone https://github.com/LOLBAS-Project/LOLBAS.git
 git clone https://github.com/mishmashclone/OlivierLaflamme-Cheatsheet-God.git
@@ -42,15 +43,15 @@ git clone https://github.com/SecWiki/windows-kernel-exploits.git
 git clone https://github.com/SecWiki/linux-kernel-exploits.git
 git clone https://github.com/tennc/webshell.git
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
+git clone https://github.com/rsmudge/ZeroLogon-BOF
 git clone https://github.com/vjeantet/hugo-theme-docdock.git
 git clone https://github.com/fox-it/mitm6.git
 
 cd mitm6/
 pip3 install .
 sudo python3 ./setup.py install
-
-cd 
-cd Documents
+ 
+cd ~/Documents
 wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
 
 cd
