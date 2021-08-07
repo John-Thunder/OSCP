@@ -33,10 +33,9 @@ cd impacket/
 pip3 install .
 sudo python3 ./setup.py install
 
-
+# exploits:
 cd /opt
 wget https://www.securitysift.com/download/linuxprivchecker.py
-# exploits:
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 git clone https://github.com/PowerShellMafia/PowerSploit.git
 git clone https://github.com/SecWiki/windows-kernel-exploits.git
@@ -44,6 +43,13 @@ git clone https://github.com/SecWiki/linux-kernel-exploits.git
 git clone https://github.com/tennc/webshell.git
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
 git clone https://github.com/rsmudge/ZeroLogon-BOF.git
+git clone https://github.com/carlospolop/PEASS-ng.git
+git clone https://github.com/PowerShellMafia/PowerSCCM.git
+git clone https://github.com/411Hall/JAWS.git
+git clone https://github.com/frizb/Windows-Privilege-Escalation.git
+git clone https://github.com/itm4n/PrivescCheck.git
+git clone https://github.com/johnchakauya/wesng.git
+
 # my repo
 git clone https://github.com/ciwen3/OSCP.git
 # other
