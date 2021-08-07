@@ -60,8 +60,6 @@ git clone https://github.com/cwinfosec/revshellgen.git
 git clone https://github.com/thosearetheguise/rev.git
 git clone https://github.com/mzet-/linux-exploit-suggester.git
 git clone https://github.com/HarmJ0y/PowerUp.git
-git clone 
-git clone 
 
 git clone https://github.com/dzonerzy/goWAPT.git
 cd goWAPT
