@@ -3,6 +3,50 @@ Originally for the OSCP. Now for the PNPT certification test. for a lot of reaso
 
 https://certifications.tcm-sec.com/pnpt/
 
+# ABOUT THE pnpt exam
+The PNPT certification exam is a one-of-a-kind ethical hacking certification exam that assesses a student’s ability to perform an external and internal network penetration test at a professional level.  Students will have five (5) full days to complete the assessment and an additional two (2) days to write a professional report.
+
+### In order to receive the certification, a student must:
+1. Perform Open-Source Intelligence (OSINT) to gather intel on how to properly attack the network
+2. Leverage their Active Directory exploitation skillsets to perform A/V and egress bypassing, lateral and vertical network movements, and ultimately compromise the exam Domain Controller
+3. Provide a detailed, professionally written report
+4. Perform a live 15-minute report debrief in front of our assessors, comprised of all senior penetration testers
+
+The standalone exam is perfect for students who are already well-versed in OSINT, external penetration testing techniques (such as vulnerability scanning, information gathering, password spraying, credential stuffing, and exploitation), and internal penetration testing techniques (such as LLMNR Poisoning, NTLM Relay Attacks, Kerberoasting, IPv6 attacks, and more).
+
+### Does my exam voucher expire?
+No, exam vouchers do not expire.
+
+### Does the certification expire?
+No, once acquired, the certification is lifetime.
+
+### Does my training expire?
+No, you will have access to your training for life.
+
+### Will I receive a digital certification?
+Yes! You can view an example of those here. https://www.credential.net/b1378d28-1db0-4fba-8174-a8827435b4b3?_ga=2.240223427.1903223037.1619739387-204885165.1618896985
+
+### Can I use any tools I want on the exam?
+Yes.  The exam is a pentest and all tools are allowed. Including Linpeas.
+### How long is the exam?
+The exam environment permits five full days to simulate a real pentest, though you can complete the engagement objectives ahead of time. You will have an additional two days to write a professional report and submit it to our team.
+
+### How does the exam compare to other certifications?
+In short, it really doesn’t.  The exam was designed because the industry is lacking in practical certifications.  Some certifications are multiple choice and do not test a student’s technical skills.  Other exams are hands on, but are not realistic in time allotment or attack methodology.  This exam replicates a true pentest in both attack methodology and the amount of time permitted to perform the test.
+
+### How difficult is the exam?
+Everyone is different, however, we believe that:
+ - If you are a beginner, the exam will be very difficult and we strongly recommend that you purchase the associated training.
+ - If you are a junior penetration tester, the exam will be difficult and may require additional training.
+ - If you are a mid to senior level pentester, the exam will be of moderate difficulty.
+
+### Is the provided training enough to pass the exam?
+Yes.  It was designed for student’s to pass the exam with the training.  The training is designed for students from absolute beginner to moderate levels and will teach you the skills necessary to be successful as a penetration tester.
+
+### Is the exam proctored?
+No.  We do monitor network traffic in the exam environment and have detection mechanisms in place for cheating in the environment and the exam, but there will be no proctor or intrusive software to install on your machine.
+
+
 # Training Videos:
 https://academy.tcm-sec.com/
 
