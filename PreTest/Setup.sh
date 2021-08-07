@@ -49,6 +49,12 @@ git clone https://github.com/411Hall/JAWS.git
 git clone https://github.com/frizb/Windows-Privilege-Escalation.git
 git clone https://github.com/itm4n/PrivescCheck.git
 git clone https://github.com/johnchakauya/wesng.git
+git clone https://github.com/leechristensen/SpoolSample.git
+git clone https://github.com/topotam/PetitPotam.git
+git clone https://github.com/antonioCoco/RemotePotato0.git
+git clone https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH.git
+git clone https://github.com/cube0x0/CVE-2021-1675.git
+
 
 # my repo
 git clone https://github.com/ciwen3/OSCP.git
@@ -90,6 +96,7 @@ sudo make install
 
 cd /usr/share/wordlists
 wget https://gist.githubusercontent.com/nullenc0de/96fb9e934fc16415fbda2f83f08b28e7/raw/146f367110973250785ced348455dc5173842ee4/content_discovery_nullenc0de.txt
+wget https://gist.githubusercontent.com/gladiatx0r/1ffe59031d42c08603a3bde0ff678feb/raw/a1db6730886a423c7639bb226beb331891bbb2a1/Workstation-Takeover.md
 git clone https://github.com/danielmiessler/SecLists.git
 
 cd
