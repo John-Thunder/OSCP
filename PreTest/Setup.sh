@@ -5,8 +5,10 @@
 # wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt update 
 sudo apt full-upgrade -y 
-sudo apt install -y curl wget gobuster ssh openvpn git flameshot expect python3 python3-pip nishang asciinema cherrytree virtualbox imagemagick gifsicle inkscape libsqlite3-dev libxslt-dev libxml2-dev zlib1g-dev gcc exploitdb
+sudo apt install -y asciinema cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn perl python3 python3-pip ssh virtualbox wget zlib1g-dev
 sudo apt autoremove
+pip3 install updog
+
 export PATH=$PATH:/opt
 
 # feroxbuster
@@ -31,6 +33,7 @@ sudo python3 ./setup.py install
 
 
 cd /opt
+wget https://www.securitysift.com/download/linuxprivchecker.py
 # exploits:
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 git clone https://github.com/PowerShellMafia/PowerSploit.git
@@ -46,14 +49,38 @@ git clone https://github.com/LOLBAS-Project/LOLBAS.git
 git clone https://github.com/mishmashclone/OlivierLaflamme-Cheatsheet-God.git
 git clone https://github.com/vjeantet/hugo-theme-docdock.git
 git clone https://github.com/NetSPI/PowerUpSQL.git
-git clone https://github.com/fox-it/mitm6.git
+# tools
+git clone https://github.com/sullo/nikto.git
+git clone https://github.com/phra/rustbuster.git
+git clone https://github.com/Tib3rius/AutoRecon.git
+git clone https://github.com/21y4d/nmapAutomator.git
+git clone https://github.com/ffuf/ffuf.git
+git clone https://github.com/sullo/nikto.git
+git clone https://github.com/cwinfosec/revshellgen.git
+git clone https://github.com/thosearetheguise/rev.git
+git clone https://github.com/mzet-/linux-exploit-suggester.git
+git clone https://github.com/HarmJ0y/PowerUp.git
+git clone 
+git clone 
 
+git clone https://github.com/dzonerzy/goWAPT.git
+cd goWAPT
+make 
+sudo make install
+cd /opt
+
+git clone https://github.com/fox-it/mitm6.git
 cd mitm6/
 pip3 install .
 sudo python3 ./setup.py install
  
 cd ~/Documents
 wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
+git clone https://github.com/GTFOBins/GTFOBins.github.io.git
+cd GTFOBins.github.io
+make 
+sudo make install
+
 
 cd /usr/share/wordlists
 wget https://gist.githubusercontent.com/nullenc0de/96fb9e934fc16415fbda2f83f08b28e7/raw/146f367110973250785ced348455dc5173842ee4/content_discovery_nullenc0de.txt
