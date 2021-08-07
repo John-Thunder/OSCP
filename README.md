@@ -7,8 +7,10 @@ https://certifications.tcm-sec.com/pnpt/
 https://academy.tcm-sec.com/
 
 # Helpful Cheatsheets:
-1. https://cheatsheet.haax.fr/windows-systems/network-and-domain-recon/domain_recon/
+1. https://cheatsheet.haax.fr/
 2. https://book.hacktricks.xyz/
+3. https://gtfobins.github.io/
+
 
 ## Study:
 1. Buffer Overflow 
