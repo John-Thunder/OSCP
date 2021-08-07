@@ -8,6 +8,7 @@ sudo apt full-upgrade -y
 sudo apt install -y asciinema cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn perl python3 python3-pip ssh virtualbox wget zlib1g-dev
 sudo apt autoremove
 pip3 install updog
+pip3 install wfuzz
 
 export PATH=$PATH:/opt
 
