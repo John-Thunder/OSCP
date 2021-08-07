@@ -10,8 +10,8 @@ sudo apt autoremove
 pip3 install updog
 pip3 install wfuzz
 
-export PATH=$PATH:/opt
 export PATH=$PATH:~/.local/lib
+export PATH=$PATH:/opt
 
 # feroxbuster
 wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip
