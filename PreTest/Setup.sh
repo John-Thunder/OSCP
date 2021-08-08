@@ -90,6 +90,7 @@ cd ~/Documents
 wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
 git clone https://github.com/GTFOBins/GTFOBins.github.io.git
 cd GTFOBins.github.io
+bundle install
 make 
 sudo make install
 
