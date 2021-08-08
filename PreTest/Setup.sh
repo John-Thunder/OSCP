@@ -137,6 +137,10 @@ EOF
 chmod +x ~/flameshot.sh
 
 
+
+# if [[ $(ps aux | grep asciinema) == "" ]]; then asciinema rec ~/asciinema/PNPT-$(date +"%d-%b-%Y-%T").$RANDOM.cast &; fi
+
+
 cat <<EOF > ~/OSCP-git.sh
 #!/bin/bash
 # upload all notes and screen shots to github every 5 min
