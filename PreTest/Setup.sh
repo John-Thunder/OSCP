@@ -10,6 +10,9 @@ sudo apt autoremove
 pip3 install updog
 pip3 install wfuzz
 
+sudo chmod 777 /usr/share/wordlists
+sudo chmod 777 /opt
+
 export PATH=$PATH:~/.local/lib
 export PATH=$PATH:/opt
 
