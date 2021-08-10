@@ -57,7 +57,8 @@ git clone https://github.com/topotam/PetitPotam.git
 git clone https://github.com/antonioCoco/RemotePotato0.git
 git clone https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH.git
 git clone https://github.com/cube0x0/CVE-2021-1675.git
-
+git clone https://github.com/GossiTheDog/HiveNightmare.git
+git clone https://github.com/GossiTheDog/SystemNightmare.git
 
 # my repo
 git clone https://github.com/ciwen3/OSCP.git
