@@ -140,7 +140,6 @@ asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/ba
 
 # Flameshot script to take screenshots every 60 seconds from command line
 ```
-# create scripts for retaining data
 cat <<EOF > ~/flameshot.sh
 #!/bin/bash
 while true; do flameshot full -p ~/Pictures/ ; sleep 60 ; done
@@ -191,7 +190,7 @@ sudo chmod 777 /usr/share/metasploit-framework/.bundle/config
 ```
 
 # Checklist:
-==========
+
 1. Auto upload github repo:
 for i in {1..1000}; do ~/OSCP-expect.sh; done
 
