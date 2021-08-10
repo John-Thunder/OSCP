@@ -61,7 +61,7 @@ https://academy.tcm-sec.com/
 2. Linux Commands and Privilege Escalation
 3. Windows Commands and Privilege Escalation
 4. Metasploit Emergency Use 
-5. ZeroLogon Exploit 
+5. Massive amount of current Windows Exploit that Microsoft doesn't plan to fix (because it works properly). 
 
 ## Tools I plan to use:
 1. GitHub Repo (this one) — https://github.com/ciwen3/OSCP.git
