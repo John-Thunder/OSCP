@@ -5,7 +5,7 @@
 # wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt update 
 sudo apt full-upgrade -y 
-sudo apt install -y asciinema cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn perl python3 python3-pip ssh virtualbox wget zlib1g-dev
+sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang gzip imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn p7zip-full perl python3 python3-pip ssh unzip virtualbox wget zip zlib1g-dev
 sudo apt autoremove
 pip3 install updog
 pip3 install wfuzz
@@ -102,6 +102,24 @@ sudo make install
 cd /usr/share/wordlists
 wget https://gist.githubusercontent.com/nullenc0de/96fb9e934fc16415fbda2f83f08b28e7/raw/146f367110973250785ced348455dc5173842ee4/content_discovery_nullenc0de.txt
 wget https://gist.githubusercontent.com/gladiatx0r/1ffe59031d42c08603a3bde0ff678feb/raw/a1db6730886a423c7639bb226beb331891bbb2a1/Workstation-Takeover.md
+wget https://crackstation.net/files/crackstation.txt.gz
+wget https://crackstation.net/files/crackstation-human-only.txt.gz
+wget http://downloads.skullsecurity.org/passwords/john.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/facebook-phished.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/porn-unknown.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/facebook-pastebay.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/elitehacker.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/hak5.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/hotmail.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/myspace.txt.bz2
+wget http://downloads.skullsecurity.org/passwords/phpbb.txt.bz2
+wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-sha1-ordered-by-count-v7.7z
+wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-ntlm-ordered-by-count-v7.7z
+
+gunzip ./*.gz
+bunzip2 ./*.bz2
+7z x ./*.7z
+
 git clone https://github.com/danielmiessler/SecLists.git
 
 cd
@@ -117,7 +135,6 @@ HISTIGNORE=?:??
 #shopt -s lithist
 asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/zsh/zshrc
 
-
 sudo echo "
 HISTTIMEFORMAT='%F %T '
 HISTFILESIZE=-1
@@ -129,14 +146,12 @@ HISTIGNORE=?:??
 #shopt -s lithist
 asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/bash.bashrc
 
-
 # create scripts for retaining data
 cat <<EOF > ~/flameshot.sh
 #!/bin/bash
 while true; do flameshot full -p ~/Pictures/ ; sleep 60 ; done
 EOF
 chmod +x ~/flameshot.sh
-
 
 
 # if [[ $(ps aux | grep asciinema) == "" ]]; then asciinema rec ~/asciinema/PNPT-$(date +"%d-%b-%Y-%T").$RANDOM.cast &; fi
