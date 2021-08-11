@@ -119,17 +119,17 @@ searchsploit afd windows local
 2. nmapAutomator — https://github.com/21y4d/nmapAutomator
 3. Reconbot — https://github.com/Apathly/Reconbot
 4. Raccoon — https://github.com/evyatarmeged/Raccoon
-5. Web Related
-6. Dirsearch — https://github.com/maurosoria/dirsearch
-7. GoBuster — https://github.com/OJ/gobuster
-8. Feroxbuster — https://github.com/epi052/feroxbuster
-9. wfuzz — https://github.com/xmendez/wfuzz
-10. goWAPT — https://github.com/dzonerzy/goWAPT
-11. ffuf — https://github.com/ffuf/ffuf
-12. Nikto — https://github.com/sullo/nikto
-13. dirb — https://tools.kali.org/web-applications/dirb
-14. dirbuster — https://tools.kali.org/web-applications/dirbuster
-15. GTFOBins (Bypass local restrictions) — https://gtfobins.github.io/
+
+## Web Enumeration:
+1. Dirsearch — https://github.com/maurosoria/dirsearch
+2. GoBuster — https://github.com/OJ/gobuster
+3. Feroxbuster — https://github.com/epi052/feroxbuster
+4. wfuzz — https://github.com/xmendez/wfuzz
+5. goWAPT — https://github.com/dzonerzy/goWAPT
+6. ffuf — https://github.com/ffuf/ffuf
+7. Nikto — https://github.com/sullo/nikto
+8. dirb — https://tools.kali.org/web-applications/dirb
+9. dirbuster — https://tools.kali.org/web-applications/dirbuster
 
 ## Network Tools:
 1. Impacket (SMB, psexec, etc) — https://github.com/SecureAuthCorp/impacket
@@ -160,9 +160,24 @@ searchsploit afd windows local
 
 ## Exploits:
 1. Exploit-DB — https://www.exploit-db.com/
-2. Windows Kernel Exploits — https://github.com/SecWiki/windows-kernel-exploits
-3. AutoNSE — https://github.com/m4ll0k/AutoNSE
-4. Linux Kernel Exploits — https://github.com/lucyoa/kernel-exploits
+2. AutoNSE — https://github.com/m4ll0k/AutoNSE
+
+## Windows Explouts:
+1. Windows Kernel Exploits — https://github.com/SecWiki/windows-kernel-exploits
+2. Windows Takeover completely from Linux — https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-pwnage-from-linux
+3. Windows Credentials — https://www.alteredsecurity.com/post/fantastic-windows-logon-types-and-where-to-find-credentials-in-them
+4. Everything Below — https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
+5. https://github.com/GossiTheDog/HiveNightmare
+6. https://github.com/GossiTheDog/SystemNightmare
+7. https://github.com/leechristensen/SpoolSample
+8. https://github.com/topotam/PetitPotam
+9. https://github.com/antonioCoco/RemotePotato0
+10. https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH
+11. https://github.com/cube0x0/CVE-2021-1675
+
+## Linux Exploits: 
+1. Linux Kernel Exploits — https://github.com/lucyoa/kernel-exploits
+2. GTFOBins (Bypass local restrictions) — https://gtfobins.github.io/
 
 ## Password Brute Forcers:
 1. BruteX — https://github.com/1N3/BruteX
