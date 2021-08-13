@@ -7,6 +7,7 @@ sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb f
 sudo apt autoremove
 pip3 install updog
 pip3 install wfuzz
+pip3 install impacket
 
 sudo chmod 777 /usr/share/wordlists
 sudo chmod 777 /opt
