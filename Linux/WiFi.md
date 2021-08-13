@@ -225,7 +225,7 @@ gunzip /usr/share/wordlists/rockyou.txt.gz
 To try opening MyWiFi-01.cap with keys in the dictionary rockyou.txt:
 ```
 aircrack-ng -1 rockyou.txt MyWiFi-01.cap
-
+```
 
 
 
