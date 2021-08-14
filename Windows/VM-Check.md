@@ -1,23 +1,37 @@
 https://www.ptsecurity.com/ww-en/analytics/antisandbox-techniques/
 
 # check if at least 15 processes are running.
+### Powershell: 
+```
+ Get-Process | Measure-Object -line
+```
 
-# checks if VMware Tools are running in background by searching for processes named "vmtoolsd" and "vbox.exe" in the list of active processes.
+# Checks if VMware Tools are running 
+by searching for processes named "vmtoolsd" and "vbox.exe" in the list of active processes.
+### Powershell: 
+```
+ Get-Process vmtoolsd, vbox
+```
+Anything except error messages means one of them is running 
+```
+ Get-Process vmtoolsd, vbox | Measure-Object -line
+```
+if out put is above 0 then one of them is running 
 
 # Check Temperature
+### CMD:
 ```
 wmic /namespace:\\root\WMI path MSAcpi_ThermalZoneTemperature get CurrentTemperature
 ```
 if it returns an error it is a VM. otherwise it will return the CurrentTemperature.
 
-
 # Check Fan Speed
+### Powershell: 
 ```
 $q = "select * from Win32_Fan"
 Get-wmiobject -Query $q
 ```
 if the response is empty it is a Virtual Machine.
-
 
 # Registry key values checks
 1. checks registry key values in System\CurrentControlSet\Enum\IDE and System\CurrentControlSet\Enum\SCSI to search for substrings that match QEMU, VirtualBox, VMware, or Xen virtualization
