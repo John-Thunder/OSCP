@@ -3,7 +3,7 @@ Originally for the OSCP. Now for the PNPT certification test. for a lot of reaso
 
 https://certifications.tcm-sec.com/pnpt/
 
-# ABOUT THE pnpt exam
+# ABOUT THE PNPT EXAM
 The PNPT certification exam is a one-of-a-kind ethical hacking certification exam that assesses a student’s ability to perform an external and internal network penetration test at a professional level.  Students will have five (5) full days to complete the assessment and an additional two (2) days to write a professional report.
 
 ### In order to receive the certification, a student must:
