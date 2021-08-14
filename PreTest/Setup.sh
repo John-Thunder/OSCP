@@ -3,15 +3,20 @@
 # Update Kali
 sudo apt update 
 sudo apt full-upgrade -y 
-sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang gzip imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn p7zip-full perl python3 python3-pip realtek-rtl88xxau-dkms ssh unzip virtualbox wget zip zlib1g-dev
+sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang gzip imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn p7zip-full perl python3 python3-pip realtek-rtl88xxau-dkms ssh unzip veil virtualbox wget zip zlib1g-dev
 sudo apt autoremove
 pip3 install updog
 pip3 install wfuzz
 pip3 install impacket
 
-sudo chmod 777 /usr/share/wordlists
-sudo chmod 777 /opt
+# install Veil 3  https://github.com/Veil-Framework/Veil
+/usr/share/veil/config/setup.sh --force --silent
 
+# change file/folder permissions
+sudo chmod -R 777 /usr/share/wordlists
+sudo chmod -R 777 /opt
+
+# Update $PATH
 export PATH=$PATH:~/.local/lib
 export PATH=$PATH:/opt
 
