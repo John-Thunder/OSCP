@@ -1,5 +1,6 @@
 # SQLi:
-https://sqlwiki.netspi.com/
+1. https://sqlwiki.netspi.com/
+2. https://github.com/NetSPI/PowerUpSQL/wiki
 
 # SQL Injection Type:
 ## In-band SQLi (Classic SQLi): 
