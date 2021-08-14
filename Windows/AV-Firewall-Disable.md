@@ -74,10 +74,16 @@ If you want to turn off the antivirus real-time functionality only, you can foll
 2. Click on Update & Security and then Windows Security
 3. From the left-hand pane, click on Virus & threat protection
 4. right-hand pane, toggle real-time protection to off.
+  
+## Add Firewall Rules Using Powershell
+```
+New-NetFirewallRule -DisplayName "New RDP Port 1350" -Direction Inbound -LocalPort 1350 -Protocol TCP -Action allow
+New-NetFirewallRule -DisplayName "New RDP Port 1350" -Direction Inbound -LocalPort 1350 -Protocol UDP -Action allow
+```
 
-
-
-
-
+## Add to Registry New Port Using Powershell
+```
+Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value 1350
+```
 
 
