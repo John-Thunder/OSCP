@@ -1,4 +1,4 @@
-```SMB AUTOBRUT
+# SMB AUTOBRUT
 The input data for carrying out this attack are only passwords.
    - those that dumped from the CharpChrome browser
    - those that were dumped by SeatBeltom
@@ -6,7 +6,7 @@ The input data for carrying out this attack are only passwords.
 And in general any others, for example, found recorded in files
    
 If there are fewer such passwords than we can launch a brute-force attack, we can safely supplement them from the following list of the most commonly encountered in the corporate environment.
-
+```
 Password1
 Hello123
 password
@@ -17,11 +17,11 @@ Password123
 job12345
 spring
 food1234
-
+```
 
 We also recommend using password lists based on the seasons and the current year. Considering that passwords are changed every three months, you can take a "reserve" to generate such a sheet.
 For example, in August 2020, we create a list with the following content
-
+```
 June2020
 July2020
 August20
@@ -34,7 +34,7 @@ August20!
 August2020!
 Summer20!
 Summer2020!
-
+```
 All passwords above fall either into 3 out of 4 requirements for Active Directory passwords (which is enough for users to set them), or into all 4 requirements.
 Approx. we consider the most popular option of requirements.
 
@@ -44,11 +44,8 @@ Approx. we consider the most popular option of requirements.
 1. We collect the list of domain administrators with the command shell net group "domain admins" / dom
    We write the received data to a file
    admins.txt
-   
 2.   We upload this file to the host in the folder C:\ProgramData
-
 3.   We request information on the domain account blocking policy (protection against brute force)
-   
    beacon> shell net accounts /dom
    
 
