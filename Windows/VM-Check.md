@@ -10,6 +10,10 @@ https://www.ptsecurity.com/ww-en/analytics/antisandbox-techniques/
 tasklist
 tasklist | find /v "" /c
 ```
+### WMI
+```
+wmic process
+```
 
 # Checks if VMware Tools are running 
 by searching for processes named "vmtoolsd" and "vbox.exe" in the list of active processes.
