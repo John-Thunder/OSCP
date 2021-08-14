@@ -87,6 +87,7 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\W
 ```
 
 ## Defender Path/File/Extension Exclusion
+https://docs.microsoft.com/en-us/powershell/module/defender/add-mppreference?view=windowsserver2019-ps
 ```
 powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\Windows\SysWOW64\Mpk"
 powershell -Command Add-MpPreference -ExclusionPath "C:\tmp"
