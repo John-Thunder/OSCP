@@ -94,3 +94,35 @@ powershell -Command Add-MpPreference -ExclusionPath "C:\tmp"
 powershell -Command Add-MpPreference -ExclusionProcess "java.exe"
 powershell -Command Add-MpPreference -ExclusionExtension ".java"
 ```
+
+## Using Powershell to add exclusions
+https://aavtech.site/2018/01/adding-exclusions-in-windows-defender/
+```
+# Add exclusions
+# add a path to exclusion list
+Add-MpPreference -ExclusionPath E:\CPP
+# add a process to exclusion list
+Add-MpPreference -ExclusionProcess "C:\Program Files (x86)\FindAndRunRobot\FindAndRunRobot.exe"
+# add an extension to exclusion list
+Add-MpPreference -ExclusionExtension ".jpg"
+
+# Remove exclusions
+# remove a path from exclusion list
+Remove-MpPreference -ExclusionPath E:\CPP
+# remove a process from exclusion list
+Remove-MpPreference -ExclusionProcess "C:\Program Files (x86)\FindAndRunRobot\FindAndRunRobot.exe"
+# remove an extension from exclusion list
+Remove-MpPreference -ExclusionExtension ".jpg"
+
+# Display exclusions
+Get-MpPreference | Select-Object ExclusionProcess
+Get-MpPreference | Select-Object ExclusionPath
+Get-MpPreference | Select-Object ExclusionExtension
+```
+
+## Test if Exclusion is Working
+To test an extension exclusion you could create the EICAR file with the excluded extension instead of txt extension or to test an exclusion for jpg files create an EICAR file with a jpg extension.
+```
+echo X5O!P%@AP[4\PZX54(P^^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H* > sample.txt
+echo X5O!P%@AP[4\PZX54(P^^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H* > sample.jpg
+```
