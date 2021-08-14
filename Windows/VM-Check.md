@@ -13,6 +13,7 @@ tasklist | find /v "" /c
 ### WMI
 ```
 wmic process
+wmic process list
 ```
 
 # Checks if VMware Tools are running 
