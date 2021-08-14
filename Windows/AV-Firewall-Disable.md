@@ -86,4 +86,10 @@ New-NetFirewallRule -DisplayName "New RDP Port 1350" -Direction Inbound -LocalPo
 Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name PortNumber -Value 1350
 ```
 
-
+## Defender Path/File/Extension Exclusion
+```
+powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\Windows\SysWOW64\Mpk"
+powershell -Command Add-MpPreference -ExclusionPath "C:\tmp"
+powershell -Command Add-MpPreference -ExclusionProcess "java.exe"
+powershell -Command Add-MpPreference -ExclusionExtension ".java"
+```
