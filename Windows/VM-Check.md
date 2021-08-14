@@ -98,11 +98,34 @@ Dir_watch.dll.
 # Check Hard drive Sizes
 sandboxes have hard drives of less than 62 GB are assumed to be Virtual Machines
 
-#  detects a debugger in the system 
+# detects a debugger in the system 
 
 # other debugger checks
 calls NtQuerySystemTime, GetSystemTimeAsFileTime, and GetTickCount. It calls each function twice to calculate a delta and performs a sleep operation between the first and second calls. If any of the three deltas is below 998 milliseconds, execution will terminate.
 
 
 # Check Number of CPUs running
+### Powershell:
+```
+(Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
+(Get-CimInstance -ClassName Win32_ComputerSystem).NumberOfLogicalProcessors
+(Get-CimInstance -ClassName Win32_Processor | Measure-Object -Property NumberOfCores -Sum).Sum
+(Get-CimInstance -ClassName Win32_Processor | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
+```
+```
+Get-WmiObject -Class Win32_Processor | Select-Object -Property Name, Number*
+```
+```
+$processor = Get-ComputerInfo -Property CsProcessors
+$processor.CsProcessors
+```
+### CMD:
+```
+echo %NUMBER_OF_PROCESSORS%
+```
+### WMI:
+```
+wmic cpu get NumberOfCores /value
+wmic cpu get NumberOfCores,NumberOfLogicalProcessors
+```
 
