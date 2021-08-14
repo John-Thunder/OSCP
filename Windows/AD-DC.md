@@ -1,6 +1,8 @@
 # Active Directory:
 alternative resource: 
 1. https://evotec.xyz/the-only-powershell-command-you-will-ever-need-to-find-out-who-did-what-in-active-directory/
+2. https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet#active-directory-exploitation-cheat-sheet
+
 ## Domain Controller
 1. hosts a copy of AD Directory Services directory store
 2. provide authentication and authorization
