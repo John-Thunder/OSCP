@@ -1,9 +1,14 @@
 https://www.ptsecurity.com/ww-en/analytics/antisandbox-techniques/
 
-# check if at least 15 processes are running.
+# Check if at least 15 processes are running.
 ### Powershell: 
 ```
  Get-Process | Measure-Object -line
+```
+### CMD:
+```
+tasklist
+tasklist | find /v "" /c
 ```
 
 # Checks if VMware Tools are running 
@@ -18,7 +23,19 @@ Anything except error messages means one of them is running
 ```
 if out put is above 0 then one of them is running 
 
+### CMD:
+```
+tasklist /fi "MODULES eq vmtoolsd"
+tasklist /fi "MODULES eq vbox"
+```
+
 # Check Temperature
+### Powershell:
+```
+$data = Get-WMIObject -Query "SELECT * FROM Win32_PerfFormattedData_Counters_ThermalZoneInformation" -Namespace "root/CIMV2"
+@($data)[0].HighPrecisionTemperature
+```
+will return the temperature of the first CPU if it is not a Virtual Machine. 
 ### CMD:
 ```
 wmic /namespace:\\root\WMI path MSAcpi_ThermalZoneTemperature get CurrentTemperature
@@ -81,4 +98,6 @@ sandboxes have hard drives of less than 62 GB are assumed to be Virtual Machines
 # other debugger checks
 calls NtQuerySystemTime, GetSystemTimeAsFileTime, and GetTickCount. It calls each function twice to calculate a delta and performs a sleep operation between the first and second calls. If any of the three deltas is below 998 milliseconds, execution will terminate.
 
+
+# Check Number of CPUs running
 
