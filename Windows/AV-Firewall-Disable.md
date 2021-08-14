@@ -1,4 +1,18 @@
 # Disabling Windows Defender Anti-Virus and Firewall
+## Check the current state of the Windows Defender service from command line
+run the following command:
+```
+sc query WinDefend
+```
+Check the STATE variable. It should be in RUNNING state if it is enabled.
+
+## Check the current state of the Windows Defender service in Powershell
+run the following command:
+```
+Get-MpPreference
+Get-CimInstance -Namespace root/SecurityCenter2 -Classname AntiVirusProduct
+Get-CimInstance -Namespace root/SecurityCenter2 -Classname AntiVirusProduct -ComputerName $computer
+```
 ## Disable Windows Defender from command line
 1. Open command prompt with administrative privileges
 2. Run the following command:
