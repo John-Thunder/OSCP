@@ -7,14 +7,14 @@ sc stop WinDefend
 ```
 
 ## Disable Windows Defender permanently from command line
-### run the following command:
+run the following command:
 ```
 sc config WinDefend start= disabled
 sc stop WinDefend
 ```
 
 ## Check the current state of the Windows Defender service
-### run the following command:
+run the following command:
 ```
 sc query WinDefend
 ```
@@ -44,7 +44,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender
 5. Double-click DisableAntiSpyware and change its value to 1.
 Windows Defender will not load after the next computer restart. 
 
-## turn off Windows Firewall only
+## Turn off Windows Firewall only
 To turn off Windows Firewall only and keep using other Windows Defender functionality, follow the steps below:
 1. Open Windows Settings (Windows key + i)
 2. Click on Update & Security and then Windows Security
@@ -54,7 +54,7 @@ To turn off Windows Firewall only and keep using other Windows Defender function
 6. Click on each network type and toggle it to disabled.
 This will only turn off the firewall. The antivirus and other functionality of Windows Defender will keep on working.
 
-## turn off Windows Defender real-time antivirus only
+## Turn off Windows Defender real-time antivirus only
 If you want to turn off the antivirus real-time functionality only, you can follow the steps below:
 1. Open Windows Settings (Windows key + i)
 2. Click on Update & Security and then Windows Security
