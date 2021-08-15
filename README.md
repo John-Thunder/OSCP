@@ -102,6 +102,24 @@ searchsploit afd windows local
 5. Feroxbuster — https://github.com/epi052/feroxbuster
 6. Rustbuster — https://github.com/phra/rustbuster
 
+## Scanners
+1. Nmap
+2. Unicornscan
+3. AngryIP Scanner
+4. Advanced Port Scanner
+
+## SQL Injection Tools
+1. SQLMap – Automatic SQL Injection And Database Takeover Tool - https://github.com/sqlmapproject/sqlmap
+2. jSQL Injection – Java Tool For Automatic SQL Database Injection - https://github.com/ron190/jsql-injection
+3. SQL – A Blind SQL-Injection Exploitation Tool - https://github.com/Neohapsis/bbqsql
+4. QLMap – Automated NoSQL Database Pwnage - https://github.com/codingo/NoSQLMap
+5. Whitewidow – SQL Vulnerability Scanner - https://kalilinuxtutorials.com/whitewidow/
+6. DSSS – Damn Small SQLi Scanner - https://github.com/stamparm/DSSS
+7. explo – Human And Machine Readable Web Vulnerability Testing Format - https://github.com/dtag-dev-sec/explo
+8. Blind-Sql-Bitshifting – Blind SQL-Injection via Bitshifting - https://github.com/awnumar/blind-sql-bitshifting
+9. Leviathan – Wide Range Mass Audit Toolkit - https://github.com/leviathan-framework/leviathan
+10. Blisqy – Exploit Time-based blind-SQL-injection in HTTP-Headers (MySQL/MariaDB) - https://github.com/JohnTroony/Blisqy
+
 ## Note Taking:
 1. CherryTree — https://www.giuspen.com/cherrytree/ (Template: https://411hall.github.io/assets/files/CTF_template.ctb)
 2. KeepNote — http://keepnote.org/
