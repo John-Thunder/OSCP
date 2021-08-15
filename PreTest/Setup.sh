@@ -7,7 +7,7 @@ sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb f
 sudo apt autoremove
 
 # Update Nmap Scripts
-nmap --script-updatedb
+sudo nmap --script-updatedb
 
 # Install pip packages
 pip3 install updog
