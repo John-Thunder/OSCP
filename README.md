@@ -186,16 +186,17 @@ searchsploit afd windows local
 
 ## Windows Explouts:
 1. Windows Kernel Exploits — https://github.com/SecWiki/windows-kernel-exploits
-2. Windows Takeover completely from Linux — https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-pwnage-from-linux
-3. Windows Credentials — https://www.alteredsecurity.com/post/fantastic-windows-logon-types-and-where-to-find-credentials-in-them
-4. Everything Below — https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
-5. https://github.com/GossiTheDog/HiveNightmare
-6. https://github.com/GossiTheDog/SystemNightmare
-7. https://github.com/leechristensen/SpoolSample
-8. https://github.com/topotam/PetitPotam
-9. https://github.com/antonioCoco/RemotePotato0
-10. https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH
-11. https://github.com/cube0x0/CVE-2021-1675
+2. LOLBins - https://lolbas-project.github.io/#
+3. Windows Takeover completely from Linux — https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-pwnage-from-linux
+4. Windows Credentials — https://www.alteredsecurity.com/post/fantastic-windows-logon-types-and-where-to-find-credentials-in-them
+5. Everything Below — https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
+6. https://github.com/GossiTheDog/HiveNightmare
+7. https://github.com/GossiTheDog/SystemNightmare
+8. https://github.com/leechristensen/SpoolSample
+9. https://github.com/topotam/PetitPotam
+10. https://github.com/antonioCoco/RemotePotato0
+11. https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH
+12. https://github.com/cube0x0/CVE-2021-1675
 
 ## Linux Exploits: 
 1. Linux Kernel Exploits — https://github.com/lucyoa/kernel-exploits
