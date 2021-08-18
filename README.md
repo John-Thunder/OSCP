@@ -94,6 +94,9 @@ searchsploit afd windows local
   /usr/share/windows-resources/binaries/
   ```
 
+## Default Passwords for Devices
+https://cirt.net/passwords
+
 ## Content Discovery Tools
 1. GoBuster — https://github.com/OJ/gobuster
 2. Recursive GoBuster — https://github.com/epi052/recursive-gobuster
