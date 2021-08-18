@@ -482,13 +482,21 @@ Ace:{
 ## Domain Enumeration: 
 ### Powerview: 
 ### Bloodhound: 
+1. https://www.pentestpartners.com/security-blog/bloodhound-walkthrough-a-tool-for-many-tradecrafts/
+2. https://github.com/BloodHoundAD/BloodHound
+
+Install: 
+```
+sudo apt install BloodHound
+```
+
 
 
 ## Pass the hash: 
 
 
 ## CrackMapExec:
-
+https://mpgn.gitbook.io/crackmapexec/
 
 ## SecretsDump.py:
 
@@ -503,7 +511,7 @@ Ace:{
 
 
 ## MimiKatz:
-
+https://github.com/gentilkiwi/mimikatz/wiki
 
 ## Golden Ticket: 
 
