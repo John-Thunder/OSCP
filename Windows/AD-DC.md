@@ -485,6 +485,7 @@ Ace:{
 ### Powerview: 
 Download on to Windows Victim Machine:
 1. https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
+
 From CMD:
 ```
 powershell -ep bypass                 # -ep   ExecutionPolicy
@@ -527,16 +528,21 @@ Install:
 sudo apt install bloodhound
 ```
 First Setup:
+
 1. In shell: 
 ```
 neo4j console
 ```
 2. Browse to http://localhost:7474/
+
 Uid: neo4j
 
 password: neo4j
+
 3. Change Default Password
+
 Close Browser Window
+
 4. In shell: 
 ```
 bloodhound
