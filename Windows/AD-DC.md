@@ -1,4 +1,7 @@
 # Active Directory:
+Evalutation Copies of Windows for testing purposes: 
+https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server
+
 alternative resource: 
 1. https://evotec.xyz/the-only-powershell-command-you-will-ever-need-to-find-out-who-did-what-in-active-directory/
 2. https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet#active-directory-exploitation-cheat-sheet
