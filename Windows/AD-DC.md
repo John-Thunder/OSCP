@@ -1,6 +1,8 @@
 # Active Directory:
 Evalutation Copies of Windows for testing purposes: 
-1. https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server
+1. https://www.microsoft.com/en-us/evalcenter/
+2. https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server
+3. https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
 
 alternative resource: 
 1. https://evotec.xyz/the-only-powershell-command-you-will-ever-need-to-find-out-who-did-what-in-active-directory/
