@@ -505,6 +505,10 @@ https://mpgn.gitbook.io/crackmapexec/
 
 
 ## kerberoasting:
+https://attack.mitre.org/techniques/T1558/003/
+
+Kerberoasting is a post-exploitation attack that extracts service account credential hashes from Active Directory for offline cracking.
+
 
 
 ## GPP:
