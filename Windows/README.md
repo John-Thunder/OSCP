@@ -11,9 +11,7 @@ https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-
 https://www.alteredsecurity.com/post/fantastic-windows-logon-types-and-where-to-find-credentials-in-them
 
 # Checklist:
-```
 https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation
-```
 
 # Windows Privilege Escalation
 https://www.fuzzysecurity.com/tutorials/16.html
