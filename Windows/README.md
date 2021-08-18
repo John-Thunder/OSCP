@@ -4,7 +4,7 @@ https://lolbas-project.github.io/
 # Microsoft Won't Fix List:
 https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
 
-### System Nightmare Automated 
+### System Nightmare Incognito 
 Install Packages if Needed.
 ```
 python3 -m pip install --upgrade pip
