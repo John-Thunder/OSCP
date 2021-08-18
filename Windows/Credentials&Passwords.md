@@ -2,7 +2,7 @@
 ## Passwords In Files:
 These are common files to find Passwords/Credentials in. They might be base64-encoded. So look out for that.
 ```
-1. c:\sysprep.inf			    [Clear Text Password]
+1. c:\sysprep.inf			[Clear Text Password]
 2. c:\sysprep\sysprep.xml		[Base64 Encoded Password]
 3. c:\unattend.xml
 4. c:\unattended.txt 
