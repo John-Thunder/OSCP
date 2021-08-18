@@ -95,7 +95,10 @@ searchsploit afd windows local
   ```
 
 ## Default Passwords for Devices
-https://cirt.net/passwords
+1. https://cirt.net/passwords
+2. https://www.passwordsdatabase.com/
+3. https://datarecovery.com/rd/default-passwords/
+4. https://www.routerpasswords.com/    [So Many Adds on this Page]
 
 ## Content Discovery Tools
 1. GoBuster — https://github.com/OJ/gobuster
