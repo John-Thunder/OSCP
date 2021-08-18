@@ -190,7 +190,7 @@ searchsploit afd windows local
 1. Exploit-DB — https://www.exploit-db.com/
 2. AutoNSE — https://github.com/m4ll0k/AutoNSE
 
-## Windows Explouts:
+## Windows Exploits:
 1. Windows Kernel Exploits — https://github.com/SecWiki/windows-kernel-exploits
 2. LOLBins - https://lolbas-project.github.io/#
 3. Windows Takeover completely from Linux — https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-pwnage-from-linux
