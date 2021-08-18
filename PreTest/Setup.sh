@@ -125,6 +125,8 @@ wget http://downloads.skullsecurity.org/passwords/myspace.txt.bz2
 wget http://downloads.skullsecurity.org/passwords/phpbb.txt.bz2
 wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-sha1-ordered-by-count-v7.7z
 wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-ntlm-ordered-by-count-v7.7z
+wget http://www.petefinnigan.com/default/oracle_default_passwords.csv
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/default-passwords.csv
 
 gunzip ./*.gz
 bunzip2 ./*.bz2
