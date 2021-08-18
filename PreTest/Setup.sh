@@ -3,7 +3,7 @@
 # Update Kali
 sudo apt update 
 sudo apt full-upgrade -y 
-sudo apt install -y asciinema bzip2 cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang gzip imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn p7zip-full perl python3 python3-pip realtek-rtl88xxau-dkms ssh unzip veil virtualbox wget zip zlib1g-dev
+sudo apt install -y asciinema bloodhound bzip2 cherrytree curl dirsearch expect exploitdb flameshot ffuf gcc gifsicle git gobuster golang gzip imagemagick inkscape libsqlite3-dev libxslt-dev libxml2-dev nikto nishang openvpn p7zip-full perl python3 python3-pip realtek-rtl88xxau-dkms ssh unzip veil virtualbox wget zip zlib1g-dev
 sudo apt autoremove
 
 # Update Nmap Scripts
