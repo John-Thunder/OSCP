@@ -518,19 +518,30 @@ Get-NetGPO | select displayname, whenchanged
 References:
 1. https://gist.githubusercontent.com/HarmJ0y/184f9822b195c52dd50c379ed3117993/raw/e5e30c942adb2347917563ef0dafa7054882535a/PowerView-3.0-tricks.ps1
 
-
-
-
-
 ### Bloodhound: 
 1. https://www.pentestpartners.com/security-blog/bloodhound-walkthrough-a-tool-for-many-tradecrafts/
 2. https://github.com/BloodHoundAD/BloodHound
 
 Install: 
 ```
-sudo apt install BloodHound
+sudo apt install bloodhound
 ```
+First Setup:
+1. In shell: 
+```
+neo4j console
+```
+2. Browse to http://localhost:7474/
+Uid: neo4j
 
+password: neo4j
+3. Change Default Password
+Close Browser Window
+4. In shell: 
+```
+bloodhound
+```
+this will open the tool and require login. 
 
 
 ## Pass the hash: 
