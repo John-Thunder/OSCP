@@ -1,8 +1,19 @@
 # Living Off the Land:
 https://lolbas-project.github.io/
 
-# Microsoft Won't Fix List:
-https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
+# Windows Exploits:
+1. Windows Kernel Exploits — https://github.com/SecWiki/windows-kernel-exploits
+2. LOLBins - https://lolbas-project.github.io/#
+3. Windows Takeover completely from Linux — https://www.sprocketsecurity.com/blog/the-ultimate-tag-team-petitpotam-and-adcs-pwnage-from-linux
+4. Windows Credentials — https://www.alteredsecurity.com/post/fantastic-windows-logon-types-and-where-to-find-credentials-in-them
+5. Microsoft Won't Fix List — https://github.com/cfalta/MicrosoftWontFixList/blob/main/README.md
+6. https://github.com/GossiTheDog/HiveNightmare
+7. https://github.com/GossiTheDog/SystemNightmare
+8. https://github.com/leechristensen/SpoolSample
+9. https://github.com/topotam/PetitPotam
+10. https://github.com/antonioCoco/RemotePotato0
+11. https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH
+12. https://github.com/cube0x0/CVE-2021-1675
 
 ### System Nightmare Incognito 
 Install Packages if Needed.
