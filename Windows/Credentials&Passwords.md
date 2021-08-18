@@ -35,7 +35,7 @@ findstr /si password *.xml *.ini *.txt
 findstr /si password *.txt *.ini *.config *.xml
 findstr /si password *.txt | *.xml | *.ini | *.rdp | *.py | *.pl | *.log
 ```
-Consider trying other variations of password like pass, cred, credentials, etc. 
+Consider trying other variations of password like pass, cred, credentials, login, uid, etc. 
 
 ## rpcping
 https://lolbas-project.github.io/lolbas/Binaries/Rpcping/#credentials
