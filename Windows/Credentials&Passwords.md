@@ -2,8 +2,8 @@
 ## Passwords In Files:
 These are common files to find Passwords/Credentials in. They might be base64-encoded. So look out for that.
 ```
-1. c:\sysprep.inf
-2. c:\sysprep\sysprep.xml
+1. c:\sysprep.inf			    [Clear Text Password]
+2. c:\sysprep\sysprep.xml		[Base64 Encoded Password]
 3. c:\unattend.xml
 4. c:\unattended.txt 
 5. %WINDIR%\Panther\Unattend\Unattended.xml
@@ -67,11 +67,6 @@ Look through output. most will help files, but you might get lucky and find an a
 ```
 Get-Childitem –Path C:\ -Include unattended.xml -Recurse -ErrorAction SilentlyContinue
 ```
-
-# Sysprep:
-1. c:\sysprep.inf			    [Clear Text Password]
-2. c:\sysprep\sysprep.xml		[Base64 Encoded Password]
-
 
 ## Find all those strings in config files.
 1. web.config
