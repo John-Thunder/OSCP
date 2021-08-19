@@ -495,25 +495,25 @@ this will not show any output, you just have to have faith it is running. or try
 ```
 Get-NetDomain
 Get-NetDomainController
-Get-DomainPolicy
-(Get-DomainPolicy)."system access"        # showws the password policy for easier password cracking
-Get-NetUser                               # can pull lots of info depending on size of domain
-Get-NetUser | select cn                   # will only pull usernames
-Get-NetUser | select samaccountname       # will only pull usernames
-Get-NetUser | select description          # will get descriptions that may have Passwords in them
-Get-UserProperty -Properties pwdlastset   # tells when each usesr password was last reset (good if you have pwnd account info)
-Get-UserProperty -Properties logoncount   # 0 logons is suspicious and maybe the signs of a honeypot account
-Get-UserProperty -Properties badpwdcount  # can show signs of an account that is being brute forced
-Get-NetComputer                           # will list all the computers on the domain
-Get-NetComputer -FullData                 # when you want a Tsunami of information 
+Get-DomainPolicy                                  # shows the policies
+(Get-DomainPolicy)."system access"                # shows the password policy for easier password cracking
+Get-NetUser                                       # can pull lots of info depending on size of domain
+Get-NetUser | select cn                           # will only pull usernames
+Get-NetUser | select samaccountname               # will only pull usernames
+Get-NetUser | select description                  # will get descriptions that may have Passwords in them
+Get-UserProperty -Properties pwdlastset           # tells when each usesr password was last reset (good if you have pwnd account info)
+Get-UserProperty -Properties logoncount           # 0 logons is suspicious and maybe the signs of a honeypot account
+Get-UserProperty -Properties badpwdcount          # can show signs of an account that is being brute forced
+Get-NetComputer                                   # will list all the computers on the domain
+Get-NetComputer -FullData                         # when you want a Tsunami of information 
 Get-NetComputer -FullData | select <catagory>     # Example Usage Below
 Get-NetComputer -FullData | select OperatinSystem # shows all the Operating Systems on the Domain
-Get-NetGroup
-Get-NetGroup -GroupName "Domain Admins"   # will list domain admins
-Get-NetGroup -GroupName *admin*           # will ist all administrators on the domain
-Get-NetGroupMember -GroupName "Domain Admins"
-Invoke-ShareFinder                        # shows all files and folders being shared on the network
-Get-NetGPO                                # shows all the Group Policies like disabled SMB signing or disabled defender
+Get-NetGroup                                      # list groups
+Get-NetGroup -GroupName "Domain Admins"           # will list domain admins group
+Get-NetGroup -GroupName *admin*                   # will ist all administrator groups on the domain
+Get-NetGroupMember -GroupName "Domain Admins"     # Will list all administrators on the domain
+Invoke-ShareFinder                                # shows all files and folders being shared on the network
+Get-NetGPO                                        # shows all the Group Policies like disabled SMB signing or disabled defender
 Get-NetGPO | select displayname, whenchanged
 ```
 References:
