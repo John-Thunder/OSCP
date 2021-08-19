@@ -531,7 +531,7 @@ First Setup:
 
 1. In shell: 
 ```
-neo4j console
+sudo neo4j console
 ```
 2. Browse to http://localhost:7474/
 
