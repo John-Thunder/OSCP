@@ -58,6 +58,8 @@ https://academy.tcm-sec.com/
 5. https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet#active-directory-exploitation-cheat-sheet
 6. https://sqlwiki.netspi.com/
 7. https://github.com/NetSPI/PowerUpSQL/wiki
+8. http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+9. https://sqlwiki.netspi.com/attackQueries/
 
 
 ## Study:
