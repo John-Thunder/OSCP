@@ -90,6 +90,7 @@ git clone https://github.com/mzet-/linux-exploit-suggester.git
 git clone https://github.com/HarmJ0y/PowerUp.git
 git clone https://github.com/BloodHoundAD/BloodHound
 git clone https://github.com/byt3bl33d3r/CrackMapExec.git
+git clone https://github.com/jonaslejon/malicious-pdf.git
 
 git clone https://github.com/dzonerzy/goWAPT.git
 cd goWAPT
