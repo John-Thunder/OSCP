@@ -137,12 +137,35 @@ gather hashes over the network passively
 ```
 sudo python /usr/share/responder/Responder.py -I eth0 -rdw -v 
 ```
+
+Options:
 ```
--I interface
--r enable answers for netbios wredir suffix queries
--d enable answers for netbios domain suffix queries
--w start the WPAD rogue proxy server
--v verbose
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -A, --analyze         Analyze mode. This option allows you to see NBT-NS,
+                        BROWSER, LLMNR requests without responding.
+  -I eth0, --interface=eth0
+                        Network interface to use
+  -b, --basic           Return a Basic HTTP authentication. Default: NTLM
+  -r, --wredir          Enable answers for netbios wredir suffix queries.
+                        Answering to wredir will likely break stuff on the
+                        network. Default: False
+  -d, --NBTNSdomain     Enable answers for netbios domain suffix queries.
+                        Answering to domain suffixes will likely break stuff
+                        on the network. Default: False
+  -f, --fingerprint     This option allows you to fingerprint a host that
+                        issued an NBT-NS or LLMNR query.
+  -w, --wpad            Start the WPAD rogue proxy server. Default value is
+                        False
+  -u UPSTREAM_PROXY, --upstream-proxy=UPSTREAM_PROXY
+                        Upstream HTTP proxy used by the rogue WPAD Proxy for
+                        outgoing requests (format: host:port)
+  -F, --ForceWpadAuth   Force NTLM/Basic authentication on wpad.dat file
+                        retrieval. This may cause a login prompt. Default:
+                        False
+  --lm                  Force LM hashing downgrade for Windows XP/2003 and
+                        earlier. Default: False
+  -v, --verbose         Increase verbosity.
 ```
 save hashses to file called hashes.txt
 
