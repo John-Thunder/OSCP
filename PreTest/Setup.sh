@@ -12,7 +12,9 @@ sudo nmap --script-updatedb
 # Install pip packages
 pip3 install updog
 pip3 install wfuzz
-pip3 install impacket
+# pip3 install impacket
+pip3 install ldap3 dnspython
+pip3 install ldapdomaindump
 
 # install Veil 3  https://github.com/Veil-Framework/Veil
 /usr/share/veil/config/setup.sh --force --silent
