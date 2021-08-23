@@ -12,7 +12,6 @@ sudo nmap --script-updatedb
 # Install pip packages
 pip3 install updog
 pip3 install wfuzz
-# pip3 install impacket
 pip3 install ldap3 dnspython
 pip3 install ldapdomaindump
 
@@ -101,20 +100,21 @@ git clone https://github.com/dzonerzy/goWAPT.git
 cd goWAPT
 make 
 sudo make install
-cd /opt
 
-git clone https://github.com/fox-it/mitm6.git
+cd /opt
+# git clone https://github.com/fox-it/mitm6.git
 cd mitm6/
 pip3 install .
 sudo python3 ./setup.py install
- 
-cd ~/Documents
-wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
-git clone https://github.com/GTFOBins/GTFOBins.github.io.git
-cd GTFOBins.github.io
-bundle install
-make 
-sudo make install
+
+
+# cd ~/Documents
+# wget https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md -o Active-Directory-Exploitation-Cheat-Sheet.md
+# git clone https://github.com/GTFOBins/GTFOBins.github.io.git
+# cd GTFOBins.github.io
+# bundle install
+# make 
+# sudo make install
 
 
 cd /usr/share/wordlists
@@ -144,27 +144,33 @@ git clone https://github.com/danielmiessler/SecLists.git
 
 cd
 mkdir ~/asciinema
-sudo echo "
-HISTTIMEFORMAT='%F %T '
-HISTFILESIZE=-1
-HISTSIZE=-1
-HISTCONTROL=ignoredups
-HISTIGNORE=?:??
-#shopt -s histappend
-#shopt -s cmdhist
-#shopt -s lithist
-asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/zsh/zshrc
 
-sudo echo "
+sudo cat <<EOF >> /etc/zsh/zshrc
 HISTTIMEFORMAT='%F %T '
 HISTFILESIZE=-1
 HISTSIZE=-1
 HISTCONTROL=ignoredups
 HISTIGNORE=?:??
-#shopt -s histappend
-#shopt -s cmdhist
-#shopt -s lithist
-asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/bash.bashrc
+EOF
+
+# shopt -s histappend
+# shopt -s cmdhist
+# shopt -s lithist
+# asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/zsh/zshrc
+
+
+sudo cat <<EOF >> /etc/bash.bashrc
+HISTTIMEFORMAT='%F %T '
+HISTFILESIZE=-1
+HISTSIZE=-1
+HISTCONTROL=ignoredups
+HISTIGNORE=?:??
+EOF
+
+# shopt -s histappend
+# shopt -s cmdhist
+# shopt -s lithist
+# asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").\$RANDOM.cast" >> /etc/bash.bashrc
 
 # create scripts for retaining data
 cat <<EOF > ~/flameshot.sh
@@ -213,15 +219,43 @@ sudo msfdb init
 sudo chmod 777 /usr/share/metasploit-framework/.bundle/config
 
 
+sudo cat <<EOF >> ~/.zshrc
+echo ""
+echo "Checklist:"
+echo "=========="
+echo "Auto upload github repo:"
+echo "for i in {1..1000}; do ~/OSCP-expect.sh; done"
+echo ""
+echo "Start screebshots:"
+echo "~/flameshot.sh"
+echo ""
+echo "To Use Impacket Docker File Run:"
+echo 'sudo docker run -it --rm "impacket:latest"'
+echo ""
+echo "to leave docker run exit"
+EOF
+
+
+sudo cat <<EOF >> ~/.bashrc
+echo ""
+echo "Checklist:"
+echo "=========="
+echo "Auto upload github repo:"
+echo "for i in {1..1000}; do ~/OSCP-expect.sh; done"
+echo ""
+echo "Start screebshots:"
+echo "~/flameshot.sh"
+echo ""
+echo "To Use Impacket Docker File Run:"
+echo 'sudo docker run -it --rm "impacket:latest"'
+echo ""
+echo "to leave docker run exit"
+EOF
+
+
 cat <<EOF 
 Checklist:
 ==========
-Auto upload github repo:
-for i in {1..1000}; do ~/OSCP-expect.sh; done
-
-Start screebshots:
-~/flameshot.sh
-
 CherryTree:
 Configuration: Edit > Preferences > Miscellaneous > Auto Save Every __ Minutes
 
@@ -229,9 +263,5 @@ MSF setup:
 msfconsole
 db_status
 bundle install
-
-# To Use Impacket Docker File Run: 
-sudo docker run -it --rm "impacket:latest"
-# to leave docker run exit 
 
 EOF
