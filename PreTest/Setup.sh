@@ -223,6 +223,8 @@ sudo cat <<EOF >> ~/.zshrc
 echo ""
 echo "Checklist:"
 echo "=========="
+echo 'asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").cast >> /etc/bash.bashrc'
+echo ""
 echo "Auto upload github repo:"
 echo "while true; do ~/OSCP-expect.sh; done"
 echo ""
@@ -240,6 +242,8 @@ sudo cat <<EOF >> ~/.bashrc
 echo ""
 echo "Checklist:"
 echo "=========="
+echo 'asciinema rec ~/asciinema/OSCP-\$(date +"%d-%b-%Y-%T").cast >> /etc/bash.bashrc'
+echo ""
 echo "Auto upload github repo:"
 echo "while true; do ~/OSCP-expect.sh; done"
 echo ""
