@@ -546,9 +546,11 @@ Download on to Windows Victim Machine:
 
 From CMD:
 ```
-powershell -ep bypass                 # -ep   ExecutionPolicy
+powershell -ep bypass 
 . .\PowerView.ps1
 ```
+Note: -ep = ExecutionPolicy
+
 this will not show any output, you just have to have faith it is running. or try the follwoing commands.
 ```
 Get-NetDomain
