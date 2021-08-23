@@ -102,7 +102,7 @@ make
 sudo make install
 
 cd /opt
-# git clone https://github.com/fox-it/mitm6.git
+git clone https://github.com/fox-it/mitm6.git
 cd mitm6/
 pip3 install .
 sudo python3 ./setup.py install
