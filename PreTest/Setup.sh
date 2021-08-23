@@ -38,14 +38,17 @@ rm ./feroxbuster_amd64.deb.zip
 #curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 #python get-pip.py
 
+# install impacket
+sudo docker build -t "impacket:latest" .
 
-cd /opt
+
+# cd /opt
 # install repos
-pip3 install impacket
-git clone https://github.com/SecureAuthCorp/impacket.git
-cd impacket/
-pip3 install .
-sudo python3 ./setup.py install
+# pip3 install impacket
+# git clone https://github.com/SecureAuthCorp/impacket.git
+# cd impacket/
+# pip3 install .
+# sudo python3 ./setup.py install
 
 # exploits:
 cd /opt
@@ -226,5 +229,8 @@ MSF setup:
 msfconsole
 db_status
 bundle install
+
+# To Use Impacket Docker File Run: 
+docker run -it --rm "impacket:latest"
 
 EOF
