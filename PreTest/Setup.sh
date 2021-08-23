@@ -135,12 +135,14 @@ wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-sha1-ordered
 wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-ntlm-ordered-by-count-v7.7z
 wget http://www.petefinnigan.com/default/oracle_default_passwords.csv
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/default-passwords.csv
+wget https://raw.githubusercontent.com/drtychai/wordlists/master/fasttrack.txt
 
 gunzip ./*.gz
 bunzip2 ./*.bz2
 7z x ./*.7z
 
 git clone https://github.com/danielmiessler/SecLists.git
+git clone https://github.com/drtychai/wordlists.git
 
 cd
 mkdir ~/asciinema
