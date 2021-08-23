@@ -231,6 +231,7 @@ db_status
 bundle install
 
 # To Use Impacket Docker File Run: 
-docker run -it --rm "impacket:latest"
+sudo docker run -it --rm "impacket:latest"
+# to leave docker run exit 
 
 EOF
