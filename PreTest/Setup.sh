@@ -136,6 +136,7 @@ wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-ntlm-ordered
 wget http://www.petefinnigan.com/default/oracle_default_passwords.csv
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/default-passwords.csv
 wget https://raw.githubusercontent.com/drtychai/wordlists/master/fasttrack.txt
+wget https://raw.githubusercontent.com/trustedsec/social-engineer-toolkit/master/src/fasttrack/wordlist.txt
 
 gunzip ./*.gz
 bunzip2 ./*.bz2
