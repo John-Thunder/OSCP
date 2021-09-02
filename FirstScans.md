@@ -7,12 +7,21 @@ theHarvester -d <domain> -b all
 # NMAP: Network Scan
 check network with ping sweep
 ```
-sudo nmap -pN -oA PingScan 192.168.1.0/24
+sudo nmap -sn -oA PingScan 192.168.1.0/24
+```
+get just the IP addresses for further searches. 
+```
+awk '{ print $2 }' PingScan.gnmap | sed 's/Nmap//g' > up.txt
 ```
 look for interesting things one might want to attack
 ```
 sudo nmap -A -sV -sC -p T:21-25,53,80,110,135-139,389,443,445,465,993,995,1433,1434,3389,8000,8080 -oA TCPScan 192.168.1.0/24    
 sudo nmap -A -sV -sC -sU -p U:53,135-139,1434 -oA UDPScan 192.168.1.0/24
+```
+look for interesting things one might want to attack from up.txt to save time
+```
+sudo nmap -A -sV -sC -p T:21-25,53,80,110,135-139,389,443,445,465,993,995,1433,1434,3389,8000,8080 -oA -iL up.txt
+sudo nmap -A -sV -sC -sU -p U:53,135-139,1434 -oA UDPScan -iL up.txt
 ```
 
 # Feroxbuster: Website File and Directory Discovery
