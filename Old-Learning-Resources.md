@@ -333,3 +333,46 @@ https://drive.google.com/file/d/0B-6uGcPYOvSZSVlRTXVjeUV3a1U/view?usp=sharing
 
 5. Cisco Packet Tracer 6.2 for Linux with no tutorials
 https://drive.google.com/file/d/0B-6uGcPYOvSZbC1XeVE0WDVsTTg/view?usp=sharing
+
+
+
+# Twitter 
+'''
+hacker adjacent: 
+https://twitter.com/deviantollam
+https://twitter.com/JackRhysider
+
+Computer humor: https://twitter.com/xkcdComic
+https://xkcd.com/
+
+Kubernetes God: https://twitter.com/IanColdwater
+does Mentoring Mondays: https://twitter.com/shehackspurple
+Blue/Red team: https://twitter.com/wehackpurple
+Women of InfoSec: https://twitter.com/WoSECtweets
+Favorite Pentest Trainer: https://twitter.com/thecybermentor
+
+Security researchers:
+https://twitter.com/MalwareJake
+https://twitter.com/malwareunicorn
+https://twitter.com/GossiTheDog
+https://twitter.com/HackingDave
+https://twitter.com/tarah
+https://twitter.com/DfirDiva
+https://twitter.com/TheDFIRReport
+
+Bug Hunters/Pentester/Hackers: 
+https://twitter.com/TinkerSec
+https://twitter.com/th3j35t3r
+https://twitter.com/Jhaddix
+https://twitter.com/NahamSec
+https://twitter.com/stokfredrik
+https://twitter.com/_JohnHammond
+https://twitter.com/huntrdev
+https://twitter.com/ippsec
+https://twitter.com/AlyssaM_InfoSec
+
+Tools: 
+https://twitter.com/PortSwigger
+https://twitter.com/KitPloit
+'''
+
