@@ -337,42 +337,48 @@ https://drive.google.com/file/d/0B-6uGcPYOvSZbC1XeVE0WDVsTTg/view?usp=sharing
 
 
 # Twitter 
-'''
-hacker adjacent: 
-https://twitter.com/deviantollam
-https://twitter.com/JackRhysider
+## hacker adjacent: 
+1. https://twitter.com/deviantollam
+2. https://twitter.com/JackRhysider
 
-Computer humor: https://twitter.com/xkcdComic
-https://xkcd.com/
+## Computer humor: 
+1. https://twitter.com/xkcdComic
+2. https://xkcd.com/
 
-Kubernetes God: https://twitter.com/IanColdwater
-does Mentoring Mondays: https://twitter.com/shehackspurple
-Blue/Red team: https://twitter.com/wehackpurple
-Women of InfoSec: https://twitter.com/WoSECtweets
-Favorite Pentest Trainer: https://twitter.com/thecybermentor
+## Kubernetes: 
+1. https://twitter.com/IanColdwater
 
-Security researchers:
-https://twitter.com/MalwareJake
-https://twitter.com/malwareunicorn
-https://twitter.com/GossiTheDog
-https://twitter.com/HackingDave
-https://twitter.com/tarah
-https://twitter.com/DfirDiva
-https://twitter.com/TheDFIRReport
+## Mentoring Mondays: 
+1. https://twitter.com/shehackspurple
+## Blue/Red team: 
+1. https://twitter.com/wehackpurple
+## Women of InfoSec: 
+1. https://twitter.com/WoSECtweets
+## Favorite Pentest Trainer: 
+1. https://twitter.com/thecybermentor
 
-Bug Hunters/Pentester/Hackers: 
-https://twitter.com/TinkerSec
-https://twitter.com/th3j35t3r
-https://twitter.com/Jhaddix
-https://twitter.com/NahamSec
-https://twitter.com/stokfredrik
-https://twitter.com/_JohnHammond
-https://twitter.com/huntrdev
-https://twitter.com/ippsec
-https://twitter.com/AlyssaM_InfoSec
+## Security researchers:
+1. https://twitter.com/MalwareJake
+2. https://twitter.com/malwareunicorn
+3. https://twitter.com/GossiTheDog
+4. https://twitter.com/HackingDave
+5. https://twitter.com/tarah
+6. https://twitter.com/DfirDiva
+7. https://twitter.com/TheDFIRReport
 
-Tools: 
-https://twitter.com/PortSwigger
-https://twitter.com/KitPloit
-'''
+## Bug Hunters/Pentester/Hackers: 
+1. https://twitter.com/TinkerSec
+2. https://twitter.com/th3j35t3r
+3. https://twitter.com/Jhaddix
+4. https://twitter.com/NahamSec
+5. https://twitter.com/stokfredrik
+6. https://twitter.com/_JohnHammond
+7. https://twitter.com/huntrdev
+8. https://twitter.com/ippsec
+9. https://twitter.com/AlyssaM_InfoSec
+
+## Tools: 
+1. https://twitter.com/PortSwigger
+2. https://twitter.com/KitPloit
+
 
