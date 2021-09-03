@@ -10,6 +10,7 @@ https://twitter.com/wdormann/status/1432703702079508480
 ``` 
 whoami 
 whoami /priv
+whoami /all
 ```
 
 ### Note: CMD and Powershell locations
