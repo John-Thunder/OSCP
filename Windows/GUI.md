@@ -11,7 +11,7 @@ https://twitter.com/last0x00/status/1433494772421992456?s=12
 8. When CMD opens type: ``` whoami /all ``` hit enter
 9. You should see Mandatory Label\High Mandatory Level and more Privledges than you would have seen if you just opened CMD
 
-This seems to give a few extra Privledges that I wouldn't get by opneing CMD as Administrator. 
+This seems to give a few extra Privledges that I wouldn't get by opneing CMD as Administrator. Similar to https://github.com/ciwen3/OSCP/tree/master/Windows/drivers
 
 
 
