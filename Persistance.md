@@ -51,7 +51,7 @@ tar -cf - ALL_FILES_YOU_WANT_TO_SEND ...| pv | nc $RECEIVER_IP 12345
 ```
 After the transferring is finished, both sides of nc will quit automatically, and job done.
 
-### scan the Interior Network: 
+### Scan the Interior Network: 
 for i in {1..254}; do ping -c 1 192.168.1.i; done 
 
 for i in {1..254}; do for x in {1..254}; do ping -c 1 10.0.x.i; done; done 
