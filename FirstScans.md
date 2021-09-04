@@ -3,10 +3,7 @@ requires some apis setup.
 ```
 theHarvester -d <domain> -b all 
 ```
-# AutoRecon
-```
-python3 ./autorecon.py 192.168.1.1
-```
+
 # NMAP: Network Scan
 check network with ping sweep
 ```
@@ -25,6 +22,11 @@ look for interesting things one might want to attack from up.txt to save time
 ```
 sudo nmap -A -sV -sC -p T:21-25,53,80,110,135-139,389,443,445,465,993,995,1433,1434,3389,8000,8080 -oA -iL up.txt
 sudo nmap -A -sV -sC -sU -p U:53,135-139,1434 -oA UDPScan -iL up.txt
+```
+
+# AutoRecon
+```
+python3 ./autorecon.py 192.168.1.1
 ```
 
 # Feroxbuster: Website File and Directory Discovery
@@ -51,34 +53,3 @@ Nikto can scan multiple ports in the same scanning session. To test more than on
 ```
 nikto -h 192.168.0.1 -p 80,88,443
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
