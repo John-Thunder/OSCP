@@ -24,11 +24,6 @@ sudo nmap -A -sV -sC -p T:21-25,53,80,110,135-139,389,443,445,465,993,995,1433,1
 sudo nmap -A -sV -sC -sU -p U:53,135-139,1434 -oA UDPScan -iL up.txt
 ```
 
-# AutoRecon
-```
-python3 ./autorecon.py 192.168.1.1
-```
-
 # Feroxbuster: Website File and Directory Discovery
 grab everything. will need to be modified to work. 
 ```
@@ -38,6 +33,11 @@ More usable searches
 ```
 feroxbuster -e -k -x js php htm html json txt-w /usr/share/wordlists/dirb/common.txt -u http://10.129.35.132/login.php 
 feroxbuster -e -f -k -w /usr/share/wordlists/dirb/common.txt -u http://10.129.35.132
+```
+
+# AutoRecon
+```
+sudo python3 ./autorecon.py 192.168.1.1
 ```
 
 # Nikto: Vulnerability Scanner
