@@ -3,7 +3,10 @@ requires some apis setup.
 ```
 theHarvester -d <domain> -b all 
 ```
-
+# AutoRecon
+```
+python3 ./autorecon.py 192.168.1.1
+```
 # NMAP: Network Scan
 check network with ping sweep
 ```
