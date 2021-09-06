@@ -47,6 +47,13 @@ python get-pip.py
 ```
 sudo docker build -t "impacket:latest" .
 ```
+
+# install wpscan docker image
+```
+docker pull wpscanteam/wpscan
+docker run -it --rm wpscanteam/wpscan --update
+```
+
 # exploits:
 ```
 cd /opt
@@ -216,6 +223,8 @@ echo ""
 echo "To Use Impacket Docker File Run:"
 echo 'sudo docker run -it --rm "impacket:latest"'
 echo ""
+echo "docker run -it --rm wpscanteam/wpscan --url https://example.com/ --enumerate u"
+echo ""
 echo "to leave docker run exit"
 EOF
 ```
@@ -234,6 +243,8 @@ echo "~/flameshot.sh &"
 echo ""
 echo "To Use Impacket Docker File Run:"
 echo 'sudo docker run -it --rm "impacket:latest"'
+echo ""
+echo "docker run -it --rm wpscanteam/wpscan --url https://example.com/ --enumerate u"
 echo ""
 echo "to leave docker run exit"
 EOF
