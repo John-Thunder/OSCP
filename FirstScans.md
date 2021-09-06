@@ -51,7 +51,7 @@ nikto -h 192.168.0.1 -p 443 -ssl
 ```
 Nikto can scan multiple ports in the same scanning session. To test more than one port on the same host, specify the list of ports in the -p (-port) option. Ports can be specified as a range (i.e., 80-90), or as a comma-delimited list, (i.e., 80,88,90). This will scan the host on ports 80, 88 and 443.
 ```
-nikto -h 192.168.0.1 -p 80,88,443
+nikto -h 192.168.0.1 -p 80,88,443 -C all
 ```
 
 # WPscan
