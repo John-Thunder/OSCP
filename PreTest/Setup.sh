@@ -41,10 +41,9 @@ rm ./feroxbuster_amd64.deb.zip
 sudo docker build -t "impacket:latest" .
 
 # install wpscan docker image
-```
 docker pull wpscanteam/wpscan
 docker run -it --rm wpscanteam/wpscan --update
-```
+
 
 # cd /opt
 # install repos
