@@ -41,8 +41,8 @@ rm ./feroxbuster_amd64.deb.zip
 sudo docker build -t "impacket:latest" .
 
 # install wpscan docker image
-docker pull wpscanteam/wpscan
-docker run -it --rm wpscanteam/wpscan --update
+sudo docker pull wpscanteam/wpscan
+sudo docker run -it --rm wpscanteam/wpscan --update
 
 
 # cd /opt
@@ -241,6 +241,8 @@ echo ""
 echo "To Use Impacket Docker File Run:"
 echo 'sudo docker run -it --rm "impacket:latest"'
 echo ""
+echo "sudo docker run -it --rm wpscanteam/wpscan --url https://example.com/ --enumerate u"
+echo ""
 echo "to leave docker run exit"
 EOF
 
@@ -260,7 +262,7 @@ echo ""
 echo "To Use Impacket Docker File Run:"
 echo 'sudo docker run -it --rm "impacket:latest"'
 echo ""
-echo "docker run -it --rm wpscanteam/wpscan --url https://example.com/ --enumerate u"
+echo "sudo docker run -it --rm wpscanteam/wpscan --url https://example.com/ --enumerate u"
 echo ""
 echo "to leave docker run exit"
 EOF
