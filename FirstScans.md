@@ -76,3 +76,27 @@ Pass password list to Docker container
 docker run -it --rm -v /Users/__macuser__/:/__containerdirectory__ wpscanteam/wpscan --url http://example..com/ --passwords /__containerdirectory__/passwords.txt
 ```
 See: https://github.com/wpscanteam/wpscan/issues/1256#issuecomment-609055053
+
+
+### Cheat Sheet
+Here we have put together a bunch of common commands that will help you get started quickly.
+
+NOTE: Get your API token from wpscan.com if you also want the vulnerabilities associated with the detected plugin displaying.
+
+Enumerate all plugins with known vulnerabilities
+```
+wpscan --url example.com -e vp --plugins-detection mixed --api-token YOUR_TOKEN
+```
+Enumerate all plugins in our database (could take a very long time)
+```
+wpscan --url example.com -e ap --plugins-detection mixed --api-token YOUR_TOKEN
+```
+Password brute force attack
+```
+wpscan --url example.com -e u --passwords /path/to/password_file.txt
+```
+The remote website is up, but does not seem to be running WordPress
+If you get the Scan Aborted: The remote website is up, but does not seem to be running WordPress. error, it means that for some reason WPScan did not think that the site you are trying to scan is actually WordPress. If you think WPScan is wrong, you can supply the --force option to force WPScan to scan the site regardless. You may also need to set other options in this case, such as --wp-content-dir and --wp-plugins-dir.
+
+Redirects
+By default WPScan will follow in scope redirects, unless the --ignore-main-redirect option is given.
