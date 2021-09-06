@@ -13,6 +13,13 @@ whoami /priv
 whoami /all
 ```
 
+## File Installation Location Vulnerability
+https://twitter.com/UK_Daniel_Card/status/1430428077792940032
+1. Plug a Razer mouse (or the dongle)
+2. Windows Update will download and execute RazerInstaller as SYSTEM
+3. Abuse elevated Explorer to open Powershell with Shift+Right click
+
+
 ### Note: CMD and Powershell locations
 1. C:\Windows\System32 folder\cmd.exe
 2. C:\Windows\System32\WindowsPowerShell\v1.0\
