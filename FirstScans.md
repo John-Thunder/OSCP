@@ -55,3 +55,24 @@ nikto -h 192.168.0.1 -p 80,88,443
 ```
 
 # WPscan
+### Docker Cheat Sheet
+Pull the Docker repository
+```
+docker pull wpscanteam/wpscan
+```
+Run WPScan and enumerate usernames
+```
+docker run -it --rm wpscanteam/wpscan --url https://target.tld/ --enumerate u
+```
+When using --output flag along with the WPScan Docker image, a bind mount must be used. Otherwise, the file is written inside the Docker container, which is then thrown away.
+```
+mkdir ~/docker-bind
+docker run --rm --mount type=bind,source=$HOME/docker-bind,target=/output wpscanteam/wpscan:latest -o /output/wpscan-output.txt --url 'https://example.com'
+```
+The wpscan-output.txt file now exists on the host machine at ~/docker-bind/wpscan-output.txt.
+
+Pass password list to Docker container
+```
+docker run -it --rm -v /Users/__macuser__/:/__containerdirectory__ wpscanteam/wpscan --url http://example..com/ --passwords /__containerdirectory__/passwords.txt
+```
+See: https://github.com/wpscanteam/wpscan/issues/1256#issuecomment-609055053
