@@ -53,3 +53,5 @@ Nikto can scan multiple ports in the same scanning session. To test more than on
 ```
 nikto -h 192.168.0.1 -p 80,88,443
 ```
+
+# WPscan
