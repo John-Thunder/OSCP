@@ -100,3 +100,11 @@ If you get the Scan Aborted: The remote website is up, but does not seem to be r
 
 Redirects
 By default WPScan will follow in scope redirects, unless the --ignore-main-redirect option is given.
+
+
+# SQLmap
+
+
+
+
+
