@@ -3,12 +3,16 @@ some are websites some require installing.
 1. https://pimeyes.com/
 2. https://github.com/ThoughtfulDev/EagleEye
 3. https://github.com/jkcso/Intel-One
-4. https://alternativeto.net/software/tineye/about/
-5. https://alternativeto.net/software/google-lens/about/
-6. https://alternativeto.net/software/search-by-image-extension/about/
-7. https://alternativeto.net/software/saucenao/about/
-8. https://alternativeto.net/software/whatanime/about/
-9. https://alternativeto.net/software/picslikethat/about/
-10. https://alternativeto.net/software/reverse-image-search/about/
-11. https://alternativeto.net/software/lookuq-lens/about/
-12. https://alternativeto.net/software/pimeyes/
+4. https://tineye.com/
+5. https://lens.google/
+6. https://addons.mozilla.org/en-US/firefox/addon/search_by_image/
+7. https://saucenao.com/
+8. https://trace.moe/
+9. http://picslikethat.visual-computing.com/
+10. https://www.labnol.org/reverse/
+11. https://play.google.com/store/apps/details?id=com.sharitek.vis.word&hl=en_US&gl=US
+12. https://apps.apple.com/us/app/lookuq-lens-object-detection/id1516296456
+
+
+# Other cool stuff:
+https://visual-computing.com/
